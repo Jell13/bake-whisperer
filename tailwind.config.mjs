@@ -11,6 +11,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        EB: ["EB Garamond"],
+        Open: ["Open Sans"],
+        Paris: ["Parisienne"],
+      }
     },
   },
   plugins: [],
