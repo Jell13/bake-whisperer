@@ -10,6 +10,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        beige: "#D4B9A6",
+        secondary: "#A48B6D",
+        walnut: "#773F1A",
+        soft: "#DDD1C5"
       },
       fontFamily: {
         EB: ["EB Garamond"],
