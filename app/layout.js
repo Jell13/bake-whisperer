@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Parisienne&display=swap" rel="stylesheet"/>
       </head>
       <body
-        className={`antialiased`}
+        className={`antialiased bg-soft`}
       >
         {children}
       </body>
