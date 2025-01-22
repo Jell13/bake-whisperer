@@ -23,8 +23,8 @@ const Navbar = () => {
     <motion.header className='absolute z-50 grid grid-cols-12 w-full px-2 py-4'>
       <nav className='flex gap-4 col-start-1 col-span-4 justify-start lg:pl-6 items-center'>
         {links.map(({id, name}) => (
-          <Link className='border-2 border-secondary lg:px-2 lg:py-2 px-2 py-2 rounded-2xl hover:bg-secondary duration-300' href="/" key={id}>
-            <p className='text-lg font-Open font-semibold tracking-tighter flex text-secondary hover:text-[#FFFFFF] duration-300'>{name}</p>
+          <Link className='border-[2px] border-secondary lg:px-2 lg:py-1 px-2 py-2 rounded-2xl hover:bg-secondary duration-300' href="/" key={id}>
+            <p className='text-lg font-Open font-medium tracking-tighter flex text-secondary hover:text-[#FFFFFF] duration-300'>{name}</p>
           </Link>
         ))}
       </nav>
@@ -39,8 +39,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className='col-start-12 flex justify-center items-center'>
-        <Link href="/" className="hover:border-2 hover:border-secondary rounded-full duration-300 p-3">
-          <TiShoppingCart className="text-secondary" size={40}/>
+        <Link href="/" className="hover:border-2 hover:border-secondary rounded-full duration-300 p-2">
+          <TiShoppingCart className="text-secondary" size={30}/>
         </Link>
       </div>
     </motion.header>
