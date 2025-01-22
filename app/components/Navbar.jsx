@@ -12,7 +12,7 @@ const Navbar = () => {
     },
     {
       id: 2,
-      name: "About Us"
+      name: "About"
     },
     {
       id: 3,
@@ -21,10 +21,10 @@ const Navbar = () => {
   ]
   return (
     <header className='absolute grid grid-cols-12 w-full px-2 py-4'>
-      <nav className='flex gap-4 col-start-1 col-span-3 justify-center items-center'>
+      <nav className='flex gap-4 col-start-1 col-span-4 justify-start lg:pl-6 items-center'>
         {links.map(({id, name}) => (
-          <Link className='border-2 border-secondary px-3 py-2 rounded-2xl hover:bg-secondary duration-300' href="/" key={id}>
-            <p className='text-xl font-Open font-semibold tracking-tighter text-secondary hover:text-[#FFFFFF] duration-300'>{name}</p>
+          <Link className='border-2 border-secondary lg:px-2 lg:py-2 px-2 py-2 rounded-2xl hover:bg-secondary duration-300' href="/" key={id}>
+            <p className='text-lg font-Open font-semibold tracking-tighter flex text-secondary hover:text-[#FFFFFF] duration-300'>{name}</p>
           </Link>
         ))}
       </nav>
