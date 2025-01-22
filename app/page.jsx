@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Loader from "./components/Loader";
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
+import { ReactLenis, useLenis } from 'lenis/react'
+import Shop from "./sections/Shop";
 
 export default function Home() {
 
@@ -19,10 +21,13 @@ export default function Home() {
             <Loader setLoading={setLoading}/>
           </motion.div>
         ): (
-          <div>
-            <Navbar/>
-            <Hero/>
-          </div>
+          <ReactLenis root>
+            <div>
+              <Navbar/>
+              <Hero/>
+              <Shop/>
+            </div>
+          </ReactLenis>
         )}
         </LayoutGroup>
       </AnimatePresence>
