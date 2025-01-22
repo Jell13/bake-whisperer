@@ -1,14 +1,31 @@
+"use client"
+
 import Image from "next/image";
 import Hero from "./sections/Hero";
 import Navbar from "./components/Navbar";
+import { useState } from "react";
+import Loader from "./components/Loader";
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 
 export default function Home() {
+
+  const [loading, setLoading] = useState(true)
   return (
     <>
-      <div>
-        <Navbar/>
-        <Hero/>
-      </div>
+      <AnimatePresence>
+        <LayoutGroup>
+        {loading ? (
+          <motion.div>
+            <Loader setLoading={setLoading}/>
+          </motion.div>
+        ): (
+          <div>
+            <Navbar/>
+            <Hero/>
+          </div>
+        )}
+        </LayoutGroup>
+      </AnimatePresence>
     </>
   );
 }
