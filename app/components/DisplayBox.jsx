@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from  'motion/react'
+import Image from 'next/image'
 
 const DisplayBox = () => {
 
@@ -28,7 +29,8 @@ const DisplayBox = () => {
       </div>
       <hr className='border-walnut'/>
       <div className='px-2 mt-6 pb-4'>
-        <motion.img animate={hover ? {scale: 1} : {scale: 0.8}} transition={{duration: 0.3, ease: "easeIn"}} className='rounded-2xl' src="/tiramisu.jpg" alt="" />
+        <motion.img animate={hover ? {scale: 1} : {scale: 0.8}} transition={{duration: 0.3, ease: "easeIn"}} className='rounded-2xl' src="/tiramisu.jpg" alt=""/>
+        {/* <Image src="/tiramisu.jpg"  alt='tiramisu'/> */}
       </div>
     </div>
   )
