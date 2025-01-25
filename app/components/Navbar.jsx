@@ -8,24 +8,29 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
-      name: "Shop"
+      name: "Shop",
+      path: "#shop"
     },
     {
       id: 2,
-      name: "About"
+      name: "About",
+      path: "#about"
     },
     {
       id: 3,
-      name: "Contact Us"
+      name: "Contact Us",
+      path: "#contacts"
     }
   ]
   return (
     <motion.header className='absolute z-50 grid grid-cols-12 w-full px-2 py-4'>
       <nav className='flex gap-4 col-start-1 col-span-4 justify-start lg:pl-6 items-center'>
-        {links.map(({id, name}) => (
-          <Link className='border-[2px] group border-secondary lg:px-2 lg:py-1 px-2 py-2 rounded-2xl hover:bg-secondary duration-300' href="/" key={id}>
+        {links.map(({id, name, path}) => (
+          <a 
+          href={path}
+          className='border-[2px] group underline-none border-secondary lg:px-2 lg:py-1 px-2 py-2 rounded-2xl hover:bg-secondary duration-300' key={id}>
             <p className='text-lg font-Open font-medium tracking-tighter flex text-secondary group-hover:text-[#FFFFFF] duration-300'>{name}</p>
-          </Link>
+          </a>
         ))}
       </nav>
       <div className='col-start-5 col-span-4'>
