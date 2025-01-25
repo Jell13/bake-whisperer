@@ -23,7 +23,7 @@ const Hero = () => {
     <div  className='bg-hero w-screen h-screen px-12'>
       <motion.div ref={heroRef} style={{opacity}} className='w-full h-full flex flex-col justify-end items-center relative'>
         <svg 
-        className='absolute inset-0 m-auto lg:w-[450px] xl:w-[650px] 2xl:w-[600px] translate-y-8 2xl:-translate-x-7 -translate-x-5'
+        className='absolute inset-0 m-auto lg:w-[450px] xl:w-[650px] 2xl:w-[600px] w-[300px] translate-y-8 2xl:-translate-x-7 -translate-x-5'
         viewBox="0 0 463 448" fill="none" xmlns="http://www.w3.org/2000/svg">
           <motion.path 
           initial={{pathLength: 0}}

@@ -53,12 +53,12 @@ const Loader = ({setLoading}) => {
       animate="show"
       exit="exit"
       onAnimationComplete={() => setLoading(false)}
-      className='md:w-[400px] w-[200px]'>
+      className='w-full flex justify-center items-center'>
         <motion.div
-        className='flex justify-center items-center'
+        className=''
         variants={itemMain}
         >
-          <motion.h1 layoutId="main-title" className='font-EB text-[3rem] font-bold tracking-tighter text-walnut'>Bake Whisperer</motion.h1>
+          <motion.h1 layoutId="main-title" className='font-EB md:text-[3rem] text-[2rem] font-bold tracking-tighter text-walnut'>Bake Whisperer</motion.h1>
         </motion.div>
       </motion.div>
     </motion.div>
