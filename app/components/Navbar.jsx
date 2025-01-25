@@ -74,7 +74,7 @@ const Navbar = () => {
   )
 }
 
-const NavbarMobile = () => {
+const NavbarScroll = () => {
   const[active, setActive] = useState(false);
   const[linkVisible, setLinkVisible] = useState(false);
 

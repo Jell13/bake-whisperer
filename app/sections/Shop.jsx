@@ -38,8 +38,8 @@ const Shop = () => {
     <motion.div 
     id='shop'
     ref={shopRef}
-    className='pt-32 px-8 text-secondary'>
-      <div className='grid grid-cols-3 gap-x-6 pt-32'>
+    className='md:pt-32 px-8 text-secondary'>
+      <div className='md:grid hidden grid-cols-3 gap-x-6 pt-32'>
         <motion.div 
         style={{ y: col1Y }}
         className='col-start-1 col-span-1 flex flex-col gap-6 translate-y-12'>
@@ -56,6 +56,23 @@ const Shop = () => {
         <motion.div 
         style={{ y: col3Y }}
         className='col-start-3 col-span-1 flex flex-col gap-6 translate-y-12'>
+          <DisplayBox details={blueberry}/>
+        </motion.div>
+      </div>
+      <div className='md:hidden grid-cols-1 gap-y-6 md:pt-32 pt-12'>
+        <motion.div 
+          className='col-span-1 flex flex-col gap-6'>
+          <h3 className='font-EB text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <DisplayBox details={strawshort}/>
+          <DisplayBox details={strawshort}/>
+        </motion.div>
+        <motion.div 
+        className='col-span-1 flex flex-col gap-6 mt-6'>
+          <DisplayBox details={tiramisu}/>
+          <DisplayBox details={strawshort}/>
+        </motion.div>
+        <motion.div 
+        className='col-span-1 flex flex-col gap-6 mt-6'>
           <DisplayBox details={blueberry}/>
         </motion.div>
       </div>
