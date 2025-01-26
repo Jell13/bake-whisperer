@@ -39,7 +39,7 @@ const Shop = () => {
     id='shop'
     ref={shopRef}
     className='md:pt-32 px-8 text-secondary'>
-      <div className='md:grid hidden grid-cols-3 gap-x-6 pt-32'>
+      <div className='md:grid hidden grid-cols-3 gap-x-6 pt-32 md:mb-48'>
         <motion.div 
         style={{ y: col1Y }}
         className='col-start-1 col-span-1 flex flex-col gap-6 translate-y-12'>

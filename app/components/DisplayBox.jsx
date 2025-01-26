@@ -9,7 +9,7 @@ const DisplayBox = ({details}) => {
   const [hover, setHover] = useState()
   return (
     <div className='border-[1px] border-walnut font-Open' onMouseEnter={() => setHover(!hover)} onMouseLeave={() => setHover(!hover)}>
-      <h1 className='px-2 py-2 font-Paris text-5xl'>{details.name}</h1>
+      <h1 className='px-2 py-2 font-Paris text-5xl text-walnut'>{details.name}</h1>
       <hr className='border-walnut'/>
       <div className='flex overflow-hidden'>
         <motion.p 
