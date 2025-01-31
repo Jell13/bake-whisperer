@@ -19,7 +19,20 @@ export default {
         EB: ["EB Garamond"],
         Open: ["Open Sans"],
         Paris: ["Parisienne"],
-      }
+      },
+      animation: {
+        "spin-slow": "spin-reverse 10s linear infinite",
+      },
+      keyframes: {
+        'spin-reverse': {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(-360deg)',
+          },
+        },
+      },
     },
   },
   plugins: [],

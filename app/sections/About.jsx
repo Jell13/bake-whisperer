@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from "motion/react"
+import Image from 'next/image'
 
 const About = () => {
 
@@ -42,6 +43,15 @@ const About = () => {
         </motion.h3>
         <div className='mt-8 text-secondary text-[1.5rem] tracking-tighter'>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum aperiam at nesciunt facilis natus tempore, libero consequatur voluptas, quibusdam amet dolores autem? Quae enim voluptatum harum illum beatae? Aspernatur.</p>
+        </div>
+
+        <div className='flex justify-end mt-10 relative'>
+          <div className=''>
+            <Image src={"/Bake_Whisperer.png"} width={200} height={200} alt='circle_text' className='animate-spin-slow'/>
+          </div>
+          <div className='absolute -translate-x-[53px] translate-y-[75px] w-24 h-24 rounded-full bg-walnut'>
+            
+          </div>
         </div>
       </div>
 
