@@ -18,8 +18,8 @@ const Navbar = () => {
     },
     {
       id: 3,
-      name: "Contact Us",
-      path: "#contacts"
+      name: "Info",
+      path: "#info"
     }
   ]
   return (

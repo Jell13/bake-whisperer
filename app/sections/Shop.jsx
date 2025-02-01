@@ -50,7 +50,7 @@ const Shop = () => {
         style={{ y: col1Y }}
         className='col-start-1 col-span-1 flex flex-col gap-6 translate-y-12'>
           <DisplayBox details={tiramisu}/>
-          <DisplayBox details={strawshort}/>
+          <DisplayBox details={cream}/>
         </motion.div>
         <motion.div 
         style={{ y: col2Y }}

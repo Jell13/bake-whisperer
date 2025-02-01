@@ -8,7 +8,7 @@ import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import { ReactLenis, useLenis } from 'lenis/react'
 import Shop from "./sections/Shop";
 import About from "./sections/About";
-import Contact from "./sections/Contact";
+import Info from "./sections/Info";
 
 export default function Home() {
 
@@ -28,7 +28,7 @@ export default function Home() {
               <Hero/>
               <Shop/>
               <About/>
-              <Contact/>
+              <Info/>
             </div>
           </ReactLenis>
         )}
