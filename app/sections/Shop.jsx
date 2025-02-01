@@ -24,6 +24,12 @@ const Shop = () => {
     images: "/blueberry.jpg"
   }
 
+  const cream = {
+    name: "Cream Puffs",
+    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    images: "/cream_puffs.jpg"
+  }
+
   const shopRef = useRef()
   const { scrollYProgress } = useScroll({
     target: shopRef,
