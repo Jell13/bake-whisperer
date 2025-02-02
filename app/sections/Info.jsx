@@ -7,10 +7,12 @@ const Info = () => {
       <div className='flex flex-col'>
         <div className='flex flex-col mb-10'>
           <h3 className='font-EB text-[3rem] tracking-tighter font-semibold text-walnut'>
-            Bake & Bliss
+            Sweet Whispers
           </h3>
           <h4 className='mt-5 font-Open tracking-tighter font-bold text-[3.5rem] text-walnut'>
-            A Haven for the Sweet Tooths
+            {/* A Haven for the Sweet Tooths */}
+            Indulge in Sweet Perfection.
+            {/* Life is Short, Eat More Cake. */}
           </h4>
         </div>
         {/* <div className='flex justify-start mt-10'>
