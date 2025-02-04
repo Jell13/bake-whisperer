@@ -75,7 +75,7 @@ const Shop = () => {
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
           <DisplayBox details={tiramisu}/>
-          <DisplayBox details={strawshort}/>
+          <DisplayBox details={cream}/>
         </motion.div>
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
