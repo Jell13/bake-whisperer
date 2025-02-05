@@ -28,6 +28,23 @@ const DisplayBox = ({details}) => {
         </motion.p>
       </div>
       <hr className='border-walnut'/>
+      <div className='px-2 mt-3 mb-3 flex justify-center'>
+          <p className='font-EB tracking-tighter text-[2rem] text-walnut flex gap-8'>
+            {details.price.length > 1 ? (
+              details.price.map(({index, type, p}) => (
+                <span key={index} className={`flex flex-col justify-center items-center ${index === 0 ? "border-r-[1px] pr-6 border-walnut" : ""}`}>
+                  <span>{type}</span>
+                  <span>{p}</span>
+                </span>
+              ))
+            ) : (
+              <span>
+                {details.price[0]}
+              </span>
+            )}
+          </p>
+      </div>
+      <hr className='border-walnut'/>
       <div className='px-2 mt-6 pb-4'>
         {/* <motion.img loading='lazy' animate={hover ? {scale: 1} : {scale: 0.8}} transition={{duration: 0.3, ease: "easeIn"}} className='rounded-2xl' src={details.images} alt=""/> */}
         <Image src={details.images} className='rounded-2xl' width={400} height={10} alt={details.images}/>

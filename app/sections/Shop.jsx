@@ -9,25 +9,36 @@ const Shop = () => {
   const tiramisu = {
     name: "Tiramisu",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
-    images: "/tiramisu.jpg"
+    images: "/tiramisu.jpg",
+    price: ["$37"]
   }
 
   const strawshort = {
     name: "Strawberry Shortcake",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
-    images: "/strawshort.jpg"
+    images: "/strawshort.jpg",
+    price: ["$37"]
   }
 
   const blueberry = {
     name : "Blueberry Shortcake",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
-    images: "/blueberry.jpg"
+    images: "/blueberry.jpg",
+    price: ["$37"]
   }
 
   const cream = {
     name: "Cream Puffs",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
-    images: "/cream_puffs.jpg"
+    images: "/cream_puffs.jpg",
+    price: ["$37"]
+  }
+
+  const brownies = {
+    name: "Fudgy Brownies",
+    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    images: "/brown.jpg",
+    price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}]
   }
 
   const shopRef = useRef()
@@ -57,7 +68,7 @@ const Shop = () => {
         className='col-start-2 col-span-1 flex flex-col gap-6 translate-y-48'>
           <h3 className='-translate-y-24 font-EB text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
-          <DisplayBox details={strawshort}/>
+          <DisplayBox details={brownies}/>
         </motion.div>
         <motion.div 
         style={{ y: col3Y }}
