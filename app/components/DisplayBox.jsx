@@ -9,7 +9,14 @@ const DisplayBox = ({details}) => {
   const [hover, setHover] = useState()
   return (
     <div className='border-[1px] border-walnut font-Open' onMouseEnter={() => setHover(!hover)} onMouseLeave={() => setHover(!hover)}>
-      <h1 className='px-2 py-2 font-Paris text-5xl text-walnut'>{details.name}</h1>
+      <h1 className='px-2 py-2 font-Paris text-5xl text-walnut flex justify-between items-center'>
+        <span>{details.name}</span>
+        {details.price.length === 1 && (
+          <span className='font-Open text-3xl pr-5'>
+            {details.price[0]}
+          </span>
+        )}
+      </h1>
       <hr className='border-walnut'/>
       <div className='flex overflow-hidden'>
         <motion.p 
@@ -30,17 +37,13 @@ const DisplayBox = ({details}) => {
       <hr className='border-walnut'/>
       <div className='px-2 mt-3 mb-3 flex justify-center'>
           <p className='font-EB tracking-tighter text-[2rem] text-walnut flex gap-8'>
-            {details.price.length > 1 ? (
+            {details.price.length > 1 && (
               details.price.map(({index, type, p}) => (
                 <span key={index} className={`flex flex-col justify-center items-center ${index === 0 ? "border-r-[1px] pr-6 border-walnut" : ""}`}>
                   <span>{type}</span>
                   <span>{p}</span>
                 </span>
               ))
-            ) : (
-              <span>
-                {details.price[0]}
-              </span>
             )}
           </p>
       </div>
