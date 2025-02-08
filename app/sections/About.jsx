@@ -6,7 +6,7 @@ const About = () => {
 
     const aboutRef = useRef(null)
 
-    const isInView = useInView(aboutRef, {margin: "-50px", once: false})
+    const isInView = useInView(aboutRef, {margin: "-50px", once: true})
     const wordVariants = {
         hidden: {y: 50, opacity: 0},
         visible: {y: 0, opacity: 1}

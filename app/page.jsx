@@ -9,6 +9,7 @@ import { ReactLenis, useLenis } from 'lenis/react'
 import Shop from "./sections/Shop";
 import About from "./sections/About";
 import Info from "./sections/Info";
+import Special from "./sections/Special";
 
 export default function Home() {
 
@@ -26,6 +27,7 @@ export default function Home() {
             <div>
               <Navbar/>
               <Hero/>
+              <Special/>
               <Shop/>
               <About/>
               <Info/>

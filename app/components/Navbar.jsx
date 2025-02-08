@@ -8,16 +8,21 @@ const Navbar = () => {
   const links = [
     {
       id: 1,
+      name: "Special",
+      path: "#special"
+    },
+    {
+      id: 2,
       name: "Shop",
       path: "#shop"
     },
     {
-      id: 2,
+      id: 3,
       name: "About",
       path: "#about"
     },
     {
-      id: 3,
+      id: 4,
       name: "Info",
       path: "#info"
     }

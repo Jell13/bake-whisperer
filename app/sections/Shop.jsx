@@ -81,7 +81,7 @@ const Shop = () => {
           className='col-span-1 flex flex-col gap-6'>
           <h3 className='font-EB text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
-          <DisplayBox details={strawshort}/>
+          <DisplayBox details={brownies}/>
         </motion.div>
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
