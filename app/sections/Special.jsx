@@ -7,7 +7,7 @@ const Special = () => {
 
   return (
     <div id='special' className='md:pt-32 px-8'>
-      <div className='border-[1px] border-walnut px-4 py-4 flex flex-col'>
+      <div className='border-[1px] border-walnut px-4 py-4 flex flex-col mt-32'>
         <h3 className='font-EB text-[4rem] text-walnut'>Seasonal Special</h3>
         <hr className='border-walnut'/>
         <div className='flex overflow-hidden'>

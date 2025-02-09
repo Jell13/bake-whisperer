@@ -41,6 +41,13 @@ const Shop = () => {
     price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}]
   }
 
+  const cheese = {
+    name: "Basque Burnt Cheesecake",
+    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    images: "/cheese.jpg",
+    price: ["$30"]
+  }
+
   const shopRef = useRef()
   const { scrollYProgress } = useScroll({
     target: shopRef,
@@ -74,6 +81,7 @@ const Shop = () => {
         style={{ y: col3Y }}
         className='col-start-3 col-span-1 flex flex-col gap-6 translate-y-12'>
           <DisplayBox details={blueberry}/>
+          <DisplayBox details={cheese}/>
         </motion.div>
       </div>
       <div className='md:hidden grid-cols-1 gap-y-6 md:pt-32 pt-12'>
@@ -91,6 +99,7 @@ const Shop = () => {
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
           <DisplayBox details={blueberry}/>
+          <DisplayBox details={cheese}/>
         </motion.div>
       </div>
     </motion.div>

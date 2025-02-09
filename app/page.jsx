@@ -27,7 +27,7 @@ export default function Home() {
             <div>
               <Navbar/>
               <Hero/>
-              <Special/>
+              {/* <Special/> */}
               <Shop/>
               <About/>
               <Info/>

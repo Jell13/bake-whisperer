@@ -47,11 +47,11 @@ const About = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est vitae magnam sint ullam corporis facere atque quia enim nemo? Fugit harum et modi minima in commodi sequi accusantium obcaecati?</p>
         </div>
 
-        <div className='flex justify-end mt-10 relative'>
+        <div className='flex md:justify-end justify-center mt-10 relative'>
           <div className=''>
             <Image src={"/Bake_Whisperer.png"} width={200} height={200} alt='circle_text' className='animate-spin-slow'/>
           </div>
-          <div className='absolute -translate-x-[53px] translate-y-[75px] w-24 h-24 rounded-full bg-walnut'/>
+          <div className='absolute md:-translate-x-[53px] md:translate-y-[75px] translate-y-[75px] w-24 h-24 rounded-full bg-walnut'/>
         </div>
       </div>
 

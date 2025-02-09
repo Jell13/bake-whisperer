@@ -6,11 +6,11 @@ import React from 'react'
 const Navbar = () => {
 
   const links = [
-    {
-      id: 1,
-      name: "Special",
-      path: "#special"
-    },
+    // {
+    //   id: 1,
+    //   name: "Special",
+    //   path: "#special"
+    // },
     {
       id: 2,
       name: "Shop",
@@ -59,11 +59,11 @@ const Navbar = () => {
         <motion.h1 
         layoutId='main-title' 
         transition={{ease: [0.6, 0.01, -0.05, 0.9], duration: 1.3}}
-        className='font-EB md:text-[3rem] text-[2rem] font-bold tracking-tighter text-walnut'>
+        className='font-EB md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>
           Bake Whisperer
         </motion.h1>
       </div>
-      <nav className='flex md:gap-4 col-start-1 col-span-4 md:justify-start lg:pl-6 md:items-center flex-col md:flex-row'>
+      <nav className='flex md:gap-4 gap-1 col-start-1 col-span-4 md:justify-start lg:pl-6 md:items-center flex-col md:flex-row'>
         {links.map(({id, name, path}) => (
           <a 
           href={path}
