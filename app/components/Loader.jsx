@@ -9,22 +9,22 @@ const Loader = ({setLoading}) => {
 
     const strawberry = {
       id: 1,
-      img: "/strawshort.jpg",
+      img: "/intro/st1.jpg",
     }
 
     const tiramisu = {
       id: 2,
-      img: "/tiramisu.jpg",
+      img: "/intro/tm1.jpg",
     }
 
     const cheese = {
       id: 3,
-      img: "/cheese.jpg",
+      img: "/intro/chs1.jpg",
     }
 
     const brown = {
       id: 4,
-      img: "/brown.jpg",
+      img: "/intro/bwn1.jpg",
     }
 
     const container = {
@@ -84,7 +84,7 @@ const Loader = ({setLoading}) => {
         >
           {/* <motion.h1 layoutId="main-title" className='font-EB md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>Bake Whisperer</motion.h1> */}
           
-          <motion.img className="w-[400px]" layoutId="main-title" src="/logo-bw.png"/>
+          <motion.img className="md:w-[400px] w-[200px]" layoutId="main-title" src="/logo-bw.png"/>
         </motion.div>
         <ImageBlock2 variants={item} details={tiramisu}/>
         <ImageBlock3 variants={item} details={cheese}/>
@@ -100,9 +100,9 @@ export const ImageBlock1 = ({variants, details}) => {
       className='absolute'
       >
         <Image
-          width={100}
+          width={200}
           height={10}
-          className={`w-[150px] rounded-xl -translate-x-60 -translate-y-24`}
+          className={`md:w-[200px] w-[100px] rounded-xl md:-translate-x-64 md:-translate-y-24 -translate-x-24 -translate-y-20`}
           src={details.img}
           alt={details.id}
         />
@@ -117,8 +117,8 @@ export const ImageBlock2 = ({variants, details}) => {
     className='absolute'
     >
       <Image
-        className={`w-[150px] rounded-xl translate-x-64 -translate-y-36`}
-        width={100}
+        className={`md:w-[150px] w-[90px] rounded-xl md:translate-x-64 md:-translate-y-36 translate-x-24 -translate-y-28`}
+        width={200}
         height={10}
         src={details.img}
         alt={details.id}
@@ -136,7 +136,7 @@ export const ImageBlock3 = ({variants, details}) => {
       <Image
         width={100}
         height={10}
-        className={`w-[150px] rounded-xl translate-x-52 translate-y-52`}
+        className={`md:w-[150px] w-[100px] rounded-xl md:translate-x-52 md:translate-y-52 translate-x-20 translate-y-24`}
         src={details.img}
         alt={details.id}
       />
@@ -153,7 +153,7 @@ export const ImageBlock4 = ({variants, details}) => {
       <Image
         width={100}
         height={10}
-        className={`w-[150px] rounded-xl -translate-x-72 translate-y-52`}
+        className={`md:w-[150px] w-[90px] rounded-xl md:-translate-x-72 md:translate-y-52 -translate-x-28 translate-y-32`}
         src={details.img}
         alt={details.id}
       />
