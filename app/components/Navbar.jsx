@@ -56,12 +56,18 @@ const Navbar = () => {
     // </motion.header>
     <motion.header className="absolute w-full flex z-50 justify-between md:px-12 px-4 py-4">
       <div className="flex justify-center items-center ">
-        <motion.h1 
+        {/* <motion.h1 
         layoutId='main-title' 
         transition={{ease: [0.6, 0.01, -0.05, 0.9], duration: 1.3}}
-        className='font-EB md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>
-          Bake Whisperer
-        </motion.h1>
+        className='font-Corn md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>
+          BAKE WHISPERER
+        </motion.h1> */}
+        <motion.img
+        layoutId='main-title'
+        src="/logo-bw.png"
+        className="w-[150px]" 
+        transition={{ease: [0.6, 0.01, -0.05, 0.9], duration: 1.3}}
+        />
       </div>
       <nav className='flex md:gap-4 gap-1 col-start-1 col-span-4 md:justify-start lg:pl-6 md:items-center flex-col md:flex-row'>
         {links.map(({id, name, path}) => (

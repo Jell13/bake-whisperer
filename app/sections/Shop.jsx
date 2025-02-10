@@ -79,7 +79,7 @@ const Shop = () => {
         <motion.div 
         style={{ y: col2Y }}
         className='col-start-2 col-span-1 flex flex-col gap-6 translate-y-48'>
-          <h3 className='-translate-y-24 font-EB text-walnut text-5xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <h3 className='-translate-y-24 font-Corn text-walnut text-5xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
           <DisplayBox details={brownies}/>
         </motion.div>
@@ -93,7 +93,7 @@ const Shop = () => {
       <div className='md:hidden grid-cols-1 gap-y-6 md:pt-32 pt-12'>
         <motion.div 
           className='col-span-1 flex flex-col gap-6'>
-          <h3 className='font-EB text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <h3 className='font-Corn text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
           <DisplayBox details={brownies}/>
         </motion.div>

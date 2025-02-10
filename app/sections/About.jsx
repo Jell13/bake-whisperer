@@ -38,7 +38,7 @@ const About = () => {
             {[words.map((word, id) => (
                 <motion.span 
                 variants={wordVariants}
-                key={id} className='md:text-[3rem] text-4xl font-EB tracking-tighter text-walnut font-medium'>{word}&nbsp;</motion.span>
+                key={id} className='md:text-[3rem] text-4xl font-Corn tracking-tighter text-walnut font-medium'>{word}&nbsp;</motion.span>
             ))]}
         </motion.h3>
         <div className='mt-8 text-secondary text-[1.5rem] tracking-tighter'>
@@ -51,7 +51,7 @@ const About = () => {
           <div className=''>
             <Image src={"/Bake_Whisperer.png"} width={200} height={200} alt='circle_text' className='animate-spin-slow'/>
           </div>
-          <div className='absolute md:-translate-x-[53px] md:translate-y-[75px] translate-y-[75px] w-24 h-24 rounded-full bg-walnut'/>
+          <div className='bw-only absolute md:-translate-x-[53px] md:translate-y-[75px] translate-y-[75px] w-24 h-24 rounded-full bg-walnut'/>
         </div>
       </div>
 

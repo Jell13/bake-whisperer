@@ -33,3 +33,10 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.bw-only{
+  background-image: url("/bw-only.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

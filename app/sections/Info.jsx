@@ -6,7 +6,7 @@ const Info = () => {
     <div id='info' className='bg-secondary rounded-t-3xl px-12 pt-12'>
       <div className='flex flex-col'>
         <div className='flex flex-col mb-10'>
-          <h3 className='font-EB text-[3rem] tracking-tighter font-semibold text-walnut'>
+          <h3 className='font-Corn text-[3rem] tracking-tighter font-semibold text-walnut'>
             Sweet Whispers
           </h3>
           <h4 className='mt-5 font-Open tracking-tighter font-bold text-[3.5rem] text-walnut'>

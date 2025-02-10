@@ -1,9 +1,31 @@
 "use client"
 
 import React, { useEffect } from 'react'
-import { motion } from "motion/react"
+import { m, motion } from "motion/react"
+import Image from 'next/image'
+// import Image from 'next/image'
 
 const Loader = ({setLoading}) => {
+
+    const strawberry = {
+      id: 1,
+      img: "/strawshort.jpg",
+    }
+
+    const tiramisu = {
+      id: 2,
+      img: "/tiramisu.jpg",
+    }
+
+    const cheese = {
+      id: 3,
+      img: "/cheese.jpg",
+    }
+
+    const brown = {
+      id: 4,
+      img: "/brown.jpg",
+    }
 
     const container = {
         show: {
@@ -19,7 +41,7 @@ const Loader = ({setLoading}) => {
           opacity: 1,
           y: 0,
           transition: {
-            ease: [0.17, 0.67, 0.83, 0.67],
+            ease: "easeInOut",
             duration: 1.6,
           },
         },
@@ -46,7 +68,7 @@ const Loader = ({setLoading}) => {
       };
 
   return (
-    <motion.div className='w-full h-screen flex justify-center items-center'>
+    <motion.div className='w-full h-screen flex justify-center items-center relative'>
       <motion.div 
       variants={container}
       initial="hidden"
@@ -54,23 +76,88 @@ const Loader = ({setLoading}) => {
       exit="exit"
       onAnimationComplete={() => setLoading(false)}
       className='w-full flex justify-center items-center'>
+        <ImageBlock1 variants={item} details={strawberry}/>
+        <ImageBlock4 variants={item} details={brown}/>
         <motion.div
-        className=''
+        className='absolute'
         variants={itemMain}
         >
-          <motion.h1 layoutId="main-title" className='font-EB md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>Bake Whisperer</motion.h1>
+          {/* <motion.h1 layoutId="main-title" className='font-EB md:text-[3rem] text-[2rem] font-medium tracking-tighter text-walnut'>Bake Whisperer</motion.h1> */}
+          
+          <motion.img className="w-[400px]" layoutId="main-title" src="/logo-bw.png"/>
         </motion.div>
+        <ImageBlock2 variants={item} details={tiramisu}/>
+        <ImageBlock3 variants={item} details={cheese}/>
       </motion.div>
     </motion.div>
   )
 }
 
-export const ImageBlock = ({src}) => {
+export const ImageBlock1 = ({variants, details}) => {
     return (
-        <div className=''>
-            <img src={src} alt="" />
-        </div>
+      <motion.div
+      variants={variants}
+      className='absolute'
+      >
+        <Image
+          width={100}
+          height={10}
+          className={`w-[150px] rounded-xl -translate-x-60 -translate-y-24`}
+          src={details.img}
+          alt={details.id}
+        />
+      </motion.div>
     )
 }
 
+export const ImageBlock2 = ({variants, details}) => {
+  return (
+    <motion.div
+    variants={variants}
+    className='absolute'
+    >
+      <Image
+        className={`w-[150px] rounded-xl translate-x-64 -translate-y-36`}
+        width={100}
+        height={10}
+        src={details.img}
+        alt={details.id}
+      />
+    </motion.div>
+  )
+}
+
+export const ImageBlock3 = ({variants, details}) => {
+  return (
+    <motion.div
+    variants={variants}
+    className='absolute'
+    >
+      <Image
+        width={100}
+        height={10}
+        className={`w-[150px] rounded-xl translate-x-52 translate-y-52`}
+        src={details.img}
+        alt={details.id}
+      />
+    </motion.div>
+  )
+}
+
+export const ImageBlock4 = ({variants, details}) => {
+  return (
+    <motion.div
+    variants={variants}
+    className='absolute'
+    >
+      <Image
+        width={100}
+        height={10}
+        className={`w-[150px] rounded-xl -translate-x-72 translate-y-52`}
+        src={details.img}
+        alt={details.id}
+      />
+    </motion.div>
+  )
+}
 export default Loader
