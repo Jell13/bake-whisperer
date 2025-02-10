@@ -9,11 +9,11 @@ const DisplayBox = ({details}) => {
 
   const [hover, setHover] = useState()
   return (
-    <Link className='font-Open' href="/strawberry">
-      <h1 className='px-2 py-2 font-Paris text-5xl text-walnut flex justify-between items-center'>
+    <Link className='font-Open' href={details.path}>
+      <h1 className='px-2 py-2 font-Quicksand text-3xl font-medium text-walnut flex justify-between items-center'>
         <span>{details.name}</span>
         {details.price.length === 1 && (
-          <span className='font-Open text-3xl pr-5'>
+          <span className='font-Open text-2xl pr-5'>
             {details.price[0]}
           </span>
         )}

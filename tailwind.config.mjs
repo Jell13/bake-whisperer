@@ -19,6 +19,9 @@ export default {
         EB: ["EB Garamond"],
         Open: ["Open Sans"],
         Paris: ["Parisienne"],
+        Julius: ["Julius Sans One"],
+        Kanit: ["Kanit"],
+        Quicksand: ["Quicksand"],
       },
       animation: {
         "spin-slow": "spin-reverse 10s linear infinite",

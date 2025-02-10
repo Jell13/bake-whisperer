@@ -10,42 +10,48 @@ const Shop = () => {
     name: "Tiramisu",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/tiramisu.jpg",
-    price: ["$37"]
+    price: ["$37"],
+    path: "/tiramisu"
   }
 
   const strawshort = {
     name: "Strawberry Shortcake",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/strawshort.jpg",
-    price: ["$37"]
+    price: ["$37"],
+    path: "/strawberry"
   }
 
   const blueberry = {
     name : "Blueberry Shortcake",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/blueberry.jpg",
-    price: ["$37"]
+    price: ["$37"],
+    path: "/blueberry"
   }
 
   const cream = {
     name: "Cream Puffs",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cream_puffs.jpg",
-    price: ["$37"]
+    price: ["$37"],
+    path: "/cream-puffs"
   }
 
   const brownies = {
     name: "Fudgy Brownies",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/brown.jpg",
-    price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}]
+    price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}],
+    path: "/brownies"
   }
 
   const cheese = {
     name: "Basque Burnt Cheesecake",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cheese.jpg",
-    price: ["$30"]
+    price: ["$30"],
+    path: "/cheese"
   }
 
   const shopRef = useRef()
@@ -73,7 +79,7 @@ const Shop = () => {
         <motion.div 
         style={{ y: col2Y }}
         className='col-start-2 col-span-1 flex flex-col gap-6 translate-y-48'>
-          <h3 className='-translate-y-24 font-EB text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <h3 className='-translate-y-24 font-EB text-walnut text-5xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
           <DisplayBox details={brownies}/>
         </motion.div>
