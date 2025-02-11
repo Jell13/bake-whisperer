@@ -30,7 +30,7 @@ const Loader = ({setLoading}) => {
     const container = {
         show: {
           transition: {
-            staggerChildren: 0.35,
+            staggerChildren: 0.2,
           },
         },
       };
@@ -42,7 +42,7 @@ const Loader = ({setLoading}) => {
           y: 0,
           transition: {
             ease: "easeInOut",
-            duration: 1.6,
+            duration: 0.8,
           },
         },
         exit: {
@@ -50,7 +50,7 @@ const Loader = ({setLoading}) => {
           y: -200,
           transition: {
             ease: "easeInOut",
-            duration: 0.8,
+            duration: 0.5,
           },
         },
       };
@@ -62,7 +62,7 @@ const Loader = ({setLoading}) => {
           y: 0,
           transition: {
             ease: [0.25, 0.1, 0.25, 1],
-            duration: 1.2,
+            duration: 0.6,
           },
         },
       };
