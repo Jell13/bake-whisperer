@@ -77,7 +77,7 @@ const NavBarFixed = () => {
   )
 }
 
-const NavBarScroll = () => {
+export const NavBarScroll = () => {
   const[active, setActive] = useState(false);
   const[linkVisible, setLinkVisible] = useState(false);
 
