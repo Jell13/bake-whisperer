@@ -153,11 +153,86 @@ export const NavBarScroll = () => {
               {links.map(links => (
                 <motion.li 
                 variants={wordVariants}
-                key={links.id} className='text-[4rem] text-primary font-medium group relative flex w-fit gap-4 cursor-pointer items-center'>
+                key={links.id} className='text-[4rem] text-primary font-semibold group relative flex w-fit gap-4 cursor-pointer items-center'>
                   <span className='w-3 h-3 absolute invisible opacity-0 bg-primary rounded-full group-hover:visible group-hover:opacity-100 group-hover:scale-100 scale-0 duration-300'></span>
                   <a href={links.path} onClick={() => setActive(false)} className='group-hover:translate-x-7 duration-700 ease-out'>
                     {links.name}
                   </a>
+                </motion.li>
+              ))}
+            </motion.nav>
+          </motion.div>
+        </div>
+      </motion.div>}
+    </>
+  )
+}
+
+export const NavBarScrollRouted = () => {
+  const[active, setActive] = useState(false);
+
+  const wordVariants = {
+    hidden: {y: 50, opacity: 0},
+    visible: {y: 0, opacity: 1, transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    }}
+  }
+
+  const staggerChildren = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const links = [
+    {
+      id: 0,
+      name: "Home",
+      path: "/#home"
+    }
+  ]
+  return (
+    <>
+      <motion.button
+      initial={{scale: 0}}
+      animate={{scale: 1}}
+      whileHover={{
+        scale: 0.8,
+        transition: {duration: 0.3}
+      }}
+      onClick={() => setActive(!active)}
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-secondary top-7 rounded-full size-16  hover:scale-90'>
+        <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-white": "-translate-y-1 rotate-0"} duration-300`}></span>
+        <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 -rotate-45 bg-white": "translate-y-1 rotate-0"} duration-300`}></span>
+      </motion.button>
+      {active && 
+      <motion.div
+      className='w-full h-screen fixed top-0 left-0 z-30 justify-end duration-300'>
+        <div className='w-full h-screen flex justify-end font-Corn'>
+          <motion.div 
+          initial={{x: active ? 500 : 0}}
+          animate={{x: active ? 0: 500, transition: {duration: 0.8, ease:[0.76, 0, 0.24, 1], delay: 0.05}}}
+          exit={{x: active && 0}}
+          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-secondary text-white'>
+            <div></div>
+            <motion.nav 
+            variants={staggerChildren}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className='relative w-full h-full px-10 leading-tight flex flex-col mt-20'>
+              {links.map(links => (
+                <motion.li 
+                variants={wordVariants}
+                key={links.id} className='text-[4rem] text-primary font-semibold group relative flex w-fit gap-4 cursor-pointer items-center'>
+                  <span className='w-3 h-3 absolute invisible opacity-0 bg-primary rounded-full group-hover:visible group-hover:opacity-100 group-hover:scale-100 scale-0 duration-300'></span>
+                  <Link href={links.path} onClick={() => setActive(false)} className='group-hover:translate-x-7 duration-700 ease-out'>
+                    {links.name}
+                  </Link>
                 </motion.li>
               ))}
             </motion.nav>
