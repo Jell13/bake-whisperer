@@ -1,9 +1,9 @@
 "use client"
 
 import Hero from "./sections/Hero";
-import Navbar from "./components/Navbar";
+import Navbar from "./_components/Navbar";
 import { useState } from "react";
-import Loader from "./components/Loader";
+import Loader from "./_components/Loader";
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import { ReactLenis, useLenis } from 'lenis/react'
 import Shop from "./sections/Shop";

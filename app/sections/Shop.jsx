@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef } from 'react'
-import DisplayBox from '../components/DisplayBox'
+import DisplayBox from '../_components/DisplayBox'
 import { motion, useScroll, useTransform } from 'motion/react'
 
 const Shop = () => {
@@ -19,7 +19,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/strawshort.jpg",
     price: ["$37"],
-    path: "/strawberry"
+    path: "/pages/strawberry"
   }
 
   const blueberry = {

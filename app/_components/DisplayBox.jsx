@@ -9,7 +9,7 @@ const DisplayBox = ({details}) => {
 
   const [hover, setHover] = useState()
   return (
-    <Link className='font-Open' href={details.path}>
+    <Link className='font-Open group' href={details.path}>
       <h1 className='px-2 py-2 font-Quicksand text-3xl font-medium text-walnut flex justify-between items-center'>
         <span>{details.name}</span>
         {details.price.length === 1 && (
@@ -35,23 +35,9 @@ const DisplayBox = ({details}) => {
           ))}
         </motion.p>
       </div>
-      {/* <hr className=''/> */}
-      {/* <div className='px-2 mt-3 mb-3 flex justify-center'>
-          <p className='font-EB tracking-tighter text-[2rem] text-walnut flex gap-8'>
-            {details.price.length > 1 && (
-              details.price.map(({index, type, p}) => (
-                <span key={index} className={`flex flex-col justify-center items-center`}>
-                  <span>{type}</span>
-                  <span>{p}</span>
-                </span>
-              ))
-            )}
-          </p>
-      </div> */}
-      {/* <hr className=''/> */}
       <div className='px-2 mt-6 pb-4'>
         {/* <motion.img loading='lazy' animate={hover ? {scale: 1} : {scale: 0.8}} transition={{duration: 0.3, ease: "easeIn"}} className='rounded-2xl' src={details.images} alt=""/> */}
-        <Image src={details.images} className='rounded-2xl' width={400} height={10} alt={details.images}/>
+        <Image src={details.images} className='rounded-2xl group-hover:scale-95 duration-300' width={400} height={10} alt={details.images}/>
       </div>
     </Link>
   )
