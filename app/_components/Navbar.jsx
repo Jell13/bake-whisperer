@@ -4,6 +4,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { motion } from 'motion/react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import Image from "next/image";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false)
@@ -160,6 +161,9 @@ export const NavBarScroll = () => {
                   </a>
                 </motion.li>
               ))}
+              <div className="flex self-center mt-10">
+                <Image src="/logo-bw.png" width={200} height={200} alt="logo"/>
+              </div>
             </motion.nav>
           </motion.div>
         </div>

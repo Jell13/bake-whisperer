@@ -15,20 +15,20 @@ export default function Home() {
 
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const isPageRefreshed = performance.navigation.type === 1; // 1 means the page was reloaded
+  // useEffect(() => {
+  //   const isPageRefreshed = performance.navigation.type === 1; // 1 means the page was reloaded
 
-    // Check session storage to see if the animation has already been played
-    const hasAnimationPlayed = sessionStorage.getItem("animationPlayed");
+  //   // Check session storage to see if the animation has already been played
+  //   const hasAnimationPlayed = sessionStorage.getItem("animationPlayed");
 
-    if (hasAnimationPlayed && !isPageRefreshed) {
-      // If the animation has already played and the page wasn't refreshed, skip it
-      setLoading(false);
-    } else {
-      // If the animation hasn't played yet or the page was refreshed, mark it as played
-      sessionStorage.setItem("animationPlayed", "true");
-    }
-  }, []);
+  //   if (hasAnimationPlayed && !isPageRefreshed) {
+  //     // If the animation has already played and the page wasn't refreshed, skip it
+  //     setLoading(false);
+  //   } else {
+  //     // If the animation hasn't played yet or the page was refreshed, mark it as played
+  //     sessionStorage.setItem("animationPlayed", "true");
+  //   }
+  // }, []);
   return (
     <>
       <AnimatePresence>
