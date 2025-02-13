@@ -20,7 +20,7 @@ const Hero = () => {
   )
 
   return (
-    <div  className='md:bg-hero bg-hero-2 w-screen h-screen px-12'>
+    <div id='home' className='md:bg-hero bg-hero-2 w-screen h-screen px-12'>
       <motion.div ref={heroRef} style={{opacity}} className='w-full h-full flex flex-col justify-end items-center relative'>
         {/* <svg 
         className='absolute inset-0 m-auto lg:w-[450px] xl:w-[450px] 2xl:w-[450px] w-[300px] translate-y-8 2xl:-translate-x-7 -translate-x-5'
