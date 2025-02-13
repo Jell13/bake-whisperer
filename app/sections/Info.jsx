@@ -9,7 +9,7 @@ const Info = () => {
           <h3 className='font-Corn text-[3rem] tracking-tighter font-semibold text-walnut'>
             Sweet Whispers
           </h3>
-          <h4 className='mt-5 font-Open tracking-tighter font-bold text-[3.5rem] text-walnut'>
+          <h4 className='mt-5 font-Open tracking-tighter font-bold md:text-[3.5rem] text-[2rem] text-walnut'>
             {/* A Haven for the Sweet Tooths */}
             Indulge in Sweet Perfection.
             {/* Life is Short, Eat More Cake. */}

@@ -30,15 +30,25 @@ export const Carousel = () => {
     const goToSlide = (slideIndex) => {
         setCurrentIndex(slideIndex);
     };
-  
+
+    const AUTO_SLIDE_DELAY = 5000; // 5 seconds
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, AUTO_SLIDE_DELAY);
+
+      return () => clearInterval(interval);
+    }, [currentIndex]);
+      
     return (
-        <div className='max-w-[700px] h-[780px] flex flex-col items-center w-full m-auto py-16 px-4 relative group'>
+        <div className='md:max-w-[700px] md:h-[780px] h-[500px] flex flex-col items-center w-full m-auto md:py-16 py-8 px-4 relative group'>
         <motion.div
             style={{ backgroundImage: `url(${slides[currentIndex]})` }}
             initial={{ opacity: 0, scale: 1.1 }} // Initial state
             animate={{ opacity: 1, scale: 1 }} // Animate to this state
             transition={{ duration: 0.5 }} // Animation duration
-            className='w-[500px] h-full rounded-2xl bg-center bg-cover duration-500'
+            className='md:w-[500px] w-[300px] h-full rounded-2xl bg-center bg-cover duration-500'
         />
         {/* Left Arrow */}
         <div className='block absolute top-[50%] -translate-x-0 translate-y-[-50%] hover:scale-90 duration-300 left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>

@@ -10,14 +10,11 @@ const page = () => {
   return (
     <div className=' flex flex-col'>
       <NavBarScrollRouted/>
-      {/* <Link href={"/"} className='md:border-[2px]  group underline-none border-secondary md:px-2 md:py-1 md:rounded-2xl hover:bg-secondary duration-300'>
-        <p>Back</p>
-      </Link> */}
-      <div className='w-full flex gap-8 py-8 px-8'>
-        <div className=''>
+      <div className='w-full flex md:flex-row flex-col gap-8 px-8 py-8'>
+        <div className='flex'>
           <Carousel/>
         </div>
-        <div className='flex flex-col py-48 '>
+        <div className='flex flex-col md:py-48 '>
           <h4 className='font-Corn text-6xl font-semibold tracking-tighter'>Strawberry Shortcake</h4>
           <br />
           <p className='font-Open tracking-tighter max-w-[40rem] text-xl'>Desc: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, doloribus molestias omnis hic asperiores in harum sapiente dolorum, adipisci fugit ratione inventore, necessitatibus pariatur tenetur sequi modi nesciunt rem fugiat.</p>
