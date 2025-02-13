@@ -11,7 +11,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/tiramisu.jpg",
     price: ["$37"],
-    path: "/tiramisu"
+    path: "/pages/tiramisu"
   }
 
   const strawshort = {
@@ -51,7 +51,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cheese.jpg",
     price: ["$30"],
-    path: "/cheese"
+    path: "/pages/cheese"
   }
 
   const shopRef = useRef()
