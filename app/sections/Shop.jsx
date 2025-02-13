@@ -27,7 +27,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/blueberry.jpg",
     price: ["$37"],
-    path: "/blueberry"
+    path: "/pages/blueberry"
   }
 
   const cream = {
@@ -35,7 +35,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cream_puffs.jpg",
     price: ["$37"],
-    path: "/cream-puffs"
+    path: "/pages/cream-puffs"
   }
 
   const brownies = {
@@ -43,7 +43,7 @@ const Shop = () => {
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/brown.jpg",
     price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}],
-    path: "/brownies"
+    path: "/pages/brownies"
   }
 
   const cheese = {
