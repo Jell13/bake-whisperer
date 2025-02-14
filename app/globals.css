@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 .bg-hero{
-  background-image: url("/home.jpg");
+  background-image: url("/home.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .bg-hero-2{
-  background-image: url("/home-mobile.jpg");
+  background-image: url("/home-mobile.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
