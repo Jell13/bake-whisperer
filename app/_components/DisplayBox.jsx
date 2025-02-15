@@ -10,13 +10,15 @@ const DisplayBox = ({details}) => {
   const [hover, setHover] = useState()
   return (
     <Link className='font-Open group' href={details.path}>
-      <h1 className='px-2 py-2 font-Quicksand text-3xl font-medium text-walnut flex justify-between items-center'>
+      <h1 className='px-2 py-2 font-Quicksand text-3xl flex-col font-medium text-walnut flex justify-between'>
         <span>{details.name}</span>
-        {details.price.length === 1 && (
-          <span className='font-Open text-2xl pr-5'>
-            {details.price[0]}
-          </span>
-        )}
+        <div className='flex gap-2'>
+          {details.price.map((d, id) => (
+            <span key={id} className='font-Open text-2xl '>
+              {d}
+            </span>
+          ))}
+        </div>
       </h1>
       {/* <hr className=''/> */}
       <div className='flex overflow-hidden'>

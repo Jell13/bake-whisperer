@@ -161,10 +161,10 @@ export const NavBarScroll = () => {
                   </a>
                 </motion.li>
               ))}
-              <div className="flex self-center mt-10">
-                <Image src="/logo-bw.png" width={200} height={200} alt="logo"/>
-              </div>
             </motion.nav>
+            <div className="flex self-center mt-10">
+              <Image src="/logo-bw.png" width={200} height={200} alt="logo"/>
+            </div>
           </motion.div>
         </div>
       </motion.div>}
@@ -240,6 +240,9 @@ export const NavBarScrollRouted = () => {
                 </motion.li>
               ))}
             </motion.nav>
+            <div className="flex self-center mt-10">
+              <Image src="/logo-bw.png" width={200} height={200} alt="logo"/>
+            </div>
           </motion.div>
         </div>
       </motion.div>}

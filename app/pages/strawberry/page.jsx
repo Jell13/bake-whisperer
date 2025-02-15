@@ -14,7 +14,7 @@ const page = () => {
         <div className='flex'>
           <Carousel/>
         </div>
-        <div className='flex flex-col md:py-48 '>
+        <div className='flex flex-col md:py-48 text-walnut'>
           <h4 className='font-Corn text-6xl font-semibold tracking-tighter'>Strawberry Shortcake</h4>
           <br />
           <p className='font-Open tracking-tighter max-w-[40rem] md:max-w-full text-xl'>Desc: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, doloribus molestias omnis hic asperiores in harum sapiente dolorum, adipisci fugit ratione inventore, necessitatibus pariatur tenetur sequi modi nesciunt rem fugiat.</p>

@@ -31,7 +31,7 @@ const Shop = () => {
   }
 
   const cream = {
-    name: "Cream Puffs",
+    name: "Choux au Craquelin",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cream_puffs.jpg",
     price: ["$37"],
@@ -42,7 +42,7 @@ const Shop = () => {
     name: "Fudgy Brownies",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/brown.jpg",
-    price: [{index: 0,type: "Original",p: "$22"}, {index: 1,type: "Almond Sprinkled", p: "$24"}],
+    price: ["$22 /", " $27"],
     path: "/pages/brownies"
   }
 
