@@ -31,10 +31,10 @@ const Shop = () => {
   }
 
   const cream = {
-    name: "Choux au Craquelin",
+    name: "Cream Puffs",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/cream_puffs.jpg",
-    price: ["$37"],
+    price: ["$30 /", " $33"],
     path: "/pages/cream-puffs"
   }
 
@@ -42,7 +42,7 @@ const Shop = () => {
     name: "Fudgy Brownies",
     ingredients: ["test", "marquee", "for", "ingredients", "animation"],
     images: "/brown.jpg",
-    price: ["$22 /", " $27"],
+    price: ["$22 /", " $24"],
     path: "/pages/brownies"
   }
 

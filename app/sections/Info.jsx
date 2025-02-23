@@ -15,27 +15,20 @@ const Info = () => {
             {/* Life is Short, Eat More Cake. */}
           </h4>
         </div>
-        {/* <div className='flex justify-start mt-10'>
-          <div className='font-Open tracking-tighter text-walnut flex flex-col'>
-            <h5 className='font-medium mb-5'>Follow and Contact us:</h5>
-            <div className='flex flex-col'>
-              <Link href={"/"} className='group relative'>
-                <p className='group relative inline-block'>
-                  Instagram
-                  <span className='border-b-[1px] border-walnut absolute left-0 w-0 group-hover:w-full duration-300'>&nbsp;</span>
-                </p>  
-              </Link>
-              <Link href={"/"} className='group relative'>
-                <p className='group relative inline-block'>
-                  Instagram
-                  <span className='border-b-[1px] border-walnut absolute left-0 w-0 group-hover:w-full duration-300'>&nbsp;</span>
-                </p> 
-              </Link>
+        <div className=' w-full flex flex-col mb-4'>
+          <Link className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem]'>Order Online</Link>
+          {/* Links */}
+          <div className='md:grid grid-cols-3 md:gap-8 mt-10 flex flex-col'>
+            <div className='col-start-1'>
+              <p className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>&copy;Bake Whisperer</p>
+            </div>
+            <div className='col-start-2 flex md:justify-center'>
+              <a href="" className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>Instagram</a>
+            </div>
+            <div className='col-start-3 flex md:justify-end'>
+              <p className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>Code by @Jason</p>
             </div>
           </div>
-        </div> */}
-        <div className='border-t-2 border-l-2 border-r-2 border-walnut py-2 px-3'>
-          
         </div>
 
       </div>
