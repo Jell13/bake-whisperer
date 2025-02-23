@@ -2,9 +2,11 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      Online Ordering
-    </div>
+    <section className=''>
+      <div>
+        <h3>Online Ordering</h3>
+      </div>
+    </section>
   )
 }
 

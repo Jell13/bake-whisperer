@@ -16,7 +16,7 @@ const Info = () => {
           </h4>
         </div>
         <div className=' w-full flex flex-col mb-4'>
-          <Link className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem]'>Order Online</Link>
+          <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
           {/* Links */}
           <div className='md:grid grid-cols-3 md:gap-8 mt-10 flex flex-col'>
             <div className='col-start-1'>
@@ -30,7 +30,6 @@ const Info = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   )
