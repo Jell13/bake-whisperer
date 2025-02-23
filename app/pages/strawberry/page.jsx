@@ -8,13 +8,20 @@ import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
+
+  const slides = [
+    "/blueberry.jpg",
+    "/brown.jpg",
+    "/cheese.jpg"
+  ];
+
   return (
     <ReactLenis root>
       <div className=' flex flex-col'>
         <NavBarScrollRouted/>
         <div className='w-full flex md:flex-row flex-col gap-8 px-8'>
           <div className='flex'>
-            <Carousel/>
+            <Carousel slides={slides}/>
           </div>
           <div className='flex flex-col md:py-48 text-walnut'>
             <h4 className='font-Corn text-6xl font-semibold tracking-tighter'>Strawberry Shortcake</h4>

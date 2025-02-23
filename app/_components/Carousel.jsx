@@ -5,13 +5,7 @@ import { motion } from "framer-motion";
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 
-const slides = [
-  "/blueberry.jpg",
-  "/brown.jpg",
-  "/cheese.jpg"
-];
-
-export const Carousel = () => {
+export const Carousel = ({slides}) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
   
