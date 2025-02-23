@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
+import { PiInstagramLogoLight } from "react-icons/pi";
+import { PiWhatsappLogoLight } from "react-icons/pi";
+import { SlLocationPin } from "react-icons/sl";
 
 const Info = () => {
   return (
@@ -17,16 +20,25 @@ const Info = () => {
         </div>
         <div className=' w-full flex flex-col mb-4'>
           <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
-          {/* Links */}
-          <div className='md:grid grid-cols-3 md:gap-8 mt-10 flex flex-col'>
-            <div className='col-start-1'>
-              <p className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>&copy;Bake Whisperer</p>
+          
+          <div className='flex justify-around mt-10 items-center'>
+            <div>
+              <img src="/logo-bw.png" alt="" className='w-[300px]'/>
             </div>
-            <div className='col-start-2 flex md:justify-center'>
-              <a href="" className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>Instagram</a>
-            </div>
-            <div className='col-start-3 flex md:justify-end'>
-              <p className='font-Corn md:text-[2rem] text-[1.5rem] text-walnut font-bold'>Code by @Jason</p>
+            {/* Links */}
+            <div className='flex flex-col gap-3 justify-start text-walnut'>
+              <Link href={"https://www.instagram.com/bakewhisperer/"} className='flex items-center gap-3'>
+                <PiInstagramLogoLight size={50}/>
+                <p className='text-3xl'>@bakewhisperer</p>
+              </Link>
+              <Link href={"/"} className='flex items-center gap-4'>
+                <PiWhatsappLogoLight size={50}/>
+                <p className='text-3xl'>626-689-3322</p>
+              </Link>
+              <div className='flex items-center gap-4'>
+                <SlLocationPin size={50}/>
+                <p className='text-3xl'>BREA, CA</p>
+              </div>
             </div>
           </div>
         </div>

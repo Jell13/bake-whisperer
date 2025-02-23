@@ -12,7 +12,7 @@ const page = () => {
     "/brown.jpg",
     "/cheese.jpg"
   ];
-
+  
   return (
     <ReactLenis root>
       <div className=' flex flex-col'>
