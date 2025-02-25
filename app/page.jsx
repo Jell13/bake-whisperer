@@ -9,26 +9,22 @@ import { ReactLenis, useLenis } from 'lenis/react'
 import Shop from "./sections/Shop";
 import About from "./sections/About";
 import Info from "./sections/Info";
-import Special from "./sections/Special";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Home() {
 
   const [loading, setLoading] = useState(true)
 
-  // useEffect(() => {
-  //   const isPageRefreshed = performance.navigation.type === 1; // 1 means the page was reloaded
+  useEffect(() => {
+    const storeUid = localStorage.getItem("userUid")
 
-  //   // Check session storage to see if the animation has already been played
-  //   const hasAnimationPlayed = sessionStorage.getItem("animationPlayed");
+    if (!storeUid){
+      const newId = uuidv4()
+      localStorage.setItem("userUid", newId)
+    }
 
-  //   if (hasAnimationPlayed && !isPageRefreshed) {
-  //     // If the animation has already played and the page wasn't refreshed, skip it
-  //     setLoading(false);
-  //   } else {
-  //     // If the animation hasn't played yet or the page was refreshed, mark it as played
-  //     sessionStorage.setItem("animationPlayed", "true");
-  //   }
-  // }, []);
+    console.log(localStorage.getItem("userUid"))
+  }, []);
   return (
     <>
       <AnimatePresence>

@@ -21,12 +21,12 @@ const Info = () => {
         <div className=' w-full flex flex-col mb-4'>
           <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
           
-          <div className='flex justify-around mt-10 items-center'>
+          <div className='flex md:flex-row flex-col justify-around mt-10 items-center'>
             <div>
-              <img src="/logo-bw.png" alt="" className='w-[300px]'/>
+              <img src="/logo-bw.png" alt="" className='md:w-[300px] w-[200px]'/>
             </div>
             {/* Links */}
-            <div className='flex flex-col gap-3 justify-start text-walnut'>
+            <div className='md:flex flex-col gap-3 justify-start text-walnut hidden'>
               <Link href={"https://www.instagram.com/bakewhisperer/"} className='flex items-center gap-3'>
                 <PiInstagramLogoLight size={50}/>
                 <p className='text-3xl'>@bakewhisperer</p>
@@ -38,6 +38,20 @@ const Info = () => {
               <div className='flex items-center gap-4'>
                 <SlLocationPin size={50}/>
                 <p className='text-3xl'>BREA, CA</p>
+              </div>
+            </div>
+            <div className='flex flex-col gap-3 justify-start text-walnut md:hidden'>
+              <Link href={"https://www.instagram.com/bakewhisperer/"} className='flex items-center gap-3'>
+                <PiInstagramLogoLight size={30}/>
+                <p className='text-2xl'>@bakewhisperer</p>
+              </Link>
+              <Link href={"/"} className='flex items-center gap-4'>
+                <PiWhatsappLogoLight size={30}/>
+                <p className='text-2xl'>626-689-3322</p>
+              </Link>
+              <div className='flex items-center gap-4'>
+                <SlLocationPin size={30}/>
+                <p className='text-2xl'>BREA, CA</p>
               </div>
             </div>
           </div>

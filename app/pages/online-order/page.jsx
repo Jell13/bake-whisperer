@@ -24,7 +24,7 @@ const page = () => {
   ]
   return (
     <ReactLenis root>
-      <section className='flex flex-col'>
+      <section className='flex flex-col text-softer'>
         <NavBarScrollCart/>
         <nav className='flex items-center justify-between pr-8 bg-soft'>
           <div className='flex gap-3 items-center'>
@@ -51,17 +51,6 @@ const page = () => {
                 <CartDisplayBox item={cakes[3]}/>
               </div>
             </div>
-            {/* <div className='grid grid-cols-3 w-full mt-8'>
-              <div className='col-span-1'>
-                <CartDisplayBox item={cakes[3]}/>
-              </div>
-              <div className='col-span-1'>
-                &nbsp;
-              </div>
-              <div className='col-span-1'>
-                &nbsp;
-              </div>
-            </div> */}
             <h3 className='font-Corn text-walnut md:text-[2.5rem] text-[2rem] font-medium mt-10'>Cream Puffs</h3>
             <div className='grid md:grid-cols-3 grid-cols-2 w-full mt-8 gap-4'>
               <div className='col-span-1'>
