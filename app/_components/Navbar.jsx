@@ -249,4 +249,54 @@ export const NavBarScrollRouted = () => {
     </>
   )
 }
+
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+export const NavBarScrollCart = () => {
+  const[active, setActive] = useState(false);
+
+  const wordVariants = {
+    hidden: {y: 50, opacity: 0},
+    visible: {y: 0, opacity: 1, transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    }}
+  }
+
+  const staggerChildren = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const links = [
+    {
+      id: 0,
+      name: "Home",
+      path: "/#home"
+    }
+  ]
+  return (
+    <>
+      <Sheet>
+        <SheetTrigger className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-beige top-7 rounded-full size-16  hover:scale-90'>
+          <HiOutlineShoppingBag size={30} className="text-walnut"/>   
+        </SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle>Are you absolutely sure?</SheetTitle>
+            <SheetDescription>
+              This action cannot be undone. This will permanently delete your account
+              and remove your data from our servers.
+            </SheetDescription>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
+
+    </>
+  )
+}
 export default Navbar

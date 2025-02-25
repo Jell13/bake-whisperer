@@ -12,6 +12,7 @@ import {
 import Link from 'next/link'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import React from 'react'
+import { NavBarScrollCart, NavBarScrollRouted } from '@/app/_components/Navbar';
 
 const page = () => {
 
@@ -23,20 +24,27 @@ const page = () => {
   ]
 
   const puffs = [
-    {name: "Matcha Filled Cream Puffs", desc: "", price: 16, image: "/puff_matcha.jpg"}
+    {name: "Original", desc: "", price: 16, image: "/puff_og.jpg"},
+    {name: "Matcha", desc: "", price: 16, image: "/puff_matcha.jpg"},
+    {name: "Chocolate Milk", desc: "", price: 16, image: "/puff_coco.jpg"}
+  ]
+
+  const brownies = [
+    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg"}
   ]
   return (
     <section className='flex flex-col'>
-      <nav className='flex items-center justify-between pr-8 bg-soft sticky top-0'>
+      <NavBarScrollCart/>
+      <nav className='flex items-center justify-between pr-8 bg-soft'>
         <div className='flex gap-3 items-center'>
           <Link href={"/"}>
             <img src="/logo-bw.png" alt="" className='w-[150px]'/>
           </Link>
           <h2 className='font-Corn text-[3rem] font-semibold text-walnut'>Online Ordering</h2>
         </div>
-        <Sheet>
+        {/* <Sheet>
           <SheetTrigger>
-            <HiOutlineShoppingBag size={40}/>
+            <HiOutlineShoppingBag size={40} className='text-walnut'/>
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
@@ -47,7 +55,7 @@ const page = () => {
               </SheetDescription>
             </SheetHeader>
           </SheetContent>
-        </Sheet>
+        </Sheet> */}
       </nav>
       <div className='flex px-12 justify-between gap-4'>
         <div className='flex flex-col w-full'>
@@ -63,7 +71,7 @@ const page = () => {
               <CartDisplayBox item={cakes[2]}/>
             </div>
           </div>
-          <div className='grid grid-cols-3 w-full mt-5'>
+          <div className='grid grid-cols-3 w-full mt-8'>
             <div className='col-span-1'>
               <CartDisplayBox item={cakes[3]}/>
             </div>
@@ -75,13 +83,25 @@ const page = () => {
             </div>
           </div>
           <h3 className='font-Corn text-walnut text-[2.5rem] font-medium mt-10'>Cream Puffs</h3>
-          <div className='grid grid-cols-3 w-full mt-5'>
+          <div className='grid grid-cols-3 w-full mt-8 gap-4'>
             <div className='col-span-1'>
               <CartDisplayBox item={puffs[0]}/>
             </div>
+            <div className='col-span-1'>
+              <CartDisplayBox item={puffs[1]}/>
+            </div>
+            <div className='col-span-1'>
+              <CartDisplayBox item={puffs[2]}/>
+            </div>
+          </div>
+          <h3 className='font-Corn text-walnut text-[2.5rem] font-medium mt-4'>Brownies</h3>
+          <div className='grid grid-cols-3 w-full mt-8 gap-4'>
+            <div className='col-span-1'>
+              <CartDisplayBox item={brownies[0]}/>
+            </div>
           </div>
         </div>
-       <div className='w-1/2'>
+       <div className='w-1/2 md:flex hidden'>
         &nbsp;
        </div>
       </div>

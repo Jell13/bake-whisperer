@@ -13,7 +13,7 @@ const CartDisplayBox = ({item}) => {
             <p className='text-wrap mt-5'>{item.desc}</p>
             </div>
         </DialogTrigger>
-        <DialogContent className="">
+        <DialogContent className="bg-soft">
         <DialogHeader>
             <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>
@@ -28,31 +28,4 @@ const CartDisplayBox = ({item}) => {
 }
 
 export default CartDisplayBox
-
-// "use client"
-// import React, { useState } from 'react'
-
-// const CartDisplayBox = () => {
-//     const[open, setOpen] = useState(false)
-//   return (
-//     <>
-//         <div className='w-full'>
-//             <div onClick={() => setOpen(!open)} className='w-full flex flex-col cursor-pointer'>
-//                 <img src="/strawshort.jpg" alt="" className='h-[400px] rounded-2xl'/>
-//                 <h3 className='font-Corn text-[1.5rem] mt-5 text-wrap'>Strawberry Shortcake</h3>
-//                 <p className='text-wrap mt-5'>A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices</p>
-//             </div>
-//         </div>
-//         {open && (
-//             <div className='absolute h-0 flex justify-center items-center'>
-//                 <div className='bg-white h-[100px] w-[100px]'>
-//                     Test
-//                 </div>
-//             </div>
-//         )}
-//     </>
-//   )
-// }
-
-// export default CartDisplayBox
 
