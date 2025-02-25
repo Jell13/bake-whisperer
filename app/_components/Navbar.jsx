@@ -66,8 +66,8 @@ const NavBarFixed = () => {
         {links.map(({id, name, path}) => (
           <a 
           href={path}
-          className='md:border-[2px] group underline-none border-secondary md:px-2 md:py-1 md:rounded-2xl hover:bg-secondary duration-300' key={id}>
-            <p className='md:text-lg text-base font-Open font-medium tracking-tighter flex text-secondary group-hover:text-[#FFFFFF] duration-300'>{name}</p>
+          className='md:border-[2px] group underline-none border-softer md:px-2 md:py-1 md:rounded-2xl hover:bg-softer duration-300' key={id}>
+            <p className='md:text-lg text-base font-Open font-medium tracking-tighter flex text-softer group-hover:text-[#FFFFFF] duration-300'>{name}</p>
           </a>
         ))}
       </nav>
@@ -131,7 +131,7 @@ export const NavBarScroll = () => {
         transition: {duration: 0.3}
       }}
       onClick={() => setActive(!active)}
-      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-secondary top-7 rounded-full size-16  hover:scale-90'>
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-softer top-7 rounded-full size-16  hover:scale-90'>
         <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-white": "-translate-y-1 rotate-0"} duration-300`}></span>
         <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 -rotate-45 bg-white": "translate-y-1 rotate-0"} duration-300`}></span>
       </motion.button>
@@ -143,7 +143,7 @@ export const NavBarScroll = () => {
           initial={{x: active ? 500 : 0}}
           animate={{x: active ? 0: 500, transition: {duration: 0.8, ease:[0.76, 0, 0.24, 1], delay: 0.05}}}
           exit={{x: active && 0}}
-          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-secondary text-white'>
+          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-softer text-white'>
             <div></div>
             <motion.nav 
             variants={staggerChildren}
@@ -209,7 +209,7 @@ export const NavBarScrollRouted = () => {
         transition: {duration: 0.3}
       }}
       onClick={() => setActive(!active)}
-      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-secondary top-7 rounded-full size-16  hover:scale-90'>
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-softer top-7 rounded-full size-16  hover:scale-90'>
         <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-white": "-translate-y-1 rotate-0"} duration-300`}></span>
         <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 -rotate-45 bg-white": "translate-y-1 rotate-0"} duration-300`}></span>
       </motion.button>
@@ -221,7 +221,7 @@ export const NavBarScrollRouted = () => {
           initial={{x: active ? 500 : 0}}
           animate={{x: active ? 0: 500, transition: {duration: 0.8, ease:[0.76, 0, 0.24, 1], delay: 0.05}}}
           exit={{x: active && 0}}
-          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-secondary text-white'>
+          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-softer text-white'>
             <div></div>
             <motion.nav 
             variants={staggerChildren}
@@ -249,5 +249,4 @@ export const NavBarScrollRouted = () => {
     </>
   )
 }
-
 export default Navbar

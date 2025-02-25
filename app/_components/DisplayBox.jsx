@@ -26,14 +26,14 @@ const DisplayBox = ({details}) => {
         initial={{x: 0}} animate={{x: "-100%"}} transition={{duration: 10, ease: 'linear', repeat: Infinity}}
         className='flex flex-shrink-0 justify-center items-center'>
           {details.ingredients.map((word, id) => (
-            <span key={id} className='pr-20 tracking-tighter text-xl'>{word}</span>
+            <span key={id} className='pr-20 tracking-tighter text-xl text-softer'>{word}</span>
           ))}
         </motion.p>
         <motion.p 
         initial={{x: 0}} animate={{x: "-100%"}} transition={{duration: 10, ease: 'linear', repeat: Infinity}}
         className='flex flex-shrink-0 justify-center items-center'>
           {details.ingredients.map((word, id) => (
-            <span key={id} className='pr-20 tracking-tighter text-xl'>{word}</span>
+            <span key={id} className='pr-20 tracking-tighter text-xl text-softer'>{word}</span>
           ))}
         </motion.p>
       </div>

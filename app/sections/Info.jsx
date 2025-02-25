@@ -6,7 +6,7 @@ import { SlLocationPin } from "react-icons/sl";
 
 const Info = () => {
   return (
-    <div id='info' className='bg-secondary rounded-t-3xl px-12 pt-12'>
+    <div id='info' className='bg-softer rounded-t-3xl px-12 pt-12'>
       <div className='flex flex-col'>
         <div className='flex flex-col mb-10'>
           <h3 className='font-Corn text-[3rem] tracking-tighter font-semibold text-walnut'>

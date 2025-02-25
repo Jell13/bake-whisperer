@@ -41,7 +41,7 @@ const About = () => {
                 key={id} className='md:text-[3rem] text-4xl font-Corn tracking-tighter text-walnut font-medium'>{word}&nbsp;</motion.span>
             ))]}
         </motion.h3>
-        <div className='mt-8 text-secondary text-[1.5rem] tracking-tighter'>
+        <div className='mt-8 text-softer text-[1.5rem] tracking-tighter'>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum aperiam at nesciunt facilis natus tempore, libero consequatur voluptas, quibusdam amet dolores autem? Quae enim voluptatum harum illum beatae? Aspernatur.</p>
             <br />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est vitae magnam sint ullam corporis facere atque quia enim nemo? Fugit harum et modi minima in commodi sequi accusantium obcaecati?</p>
