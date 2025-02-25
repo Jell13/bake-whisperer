@@ -282,7 +282,7 @@ export const NavBarScrollCart = () => {
   return (
     <>
       <Sheet>
-        <SheetTrigger className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-beige top-7 rounded-full size-16  hover:scale-90'>
+        <SheetTrigger className='text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-3 bg-beige top-7 rounded-full size-16  hover:scale-90'>
           <HiOutlineShoppingBag size={30} className="text-walnut"/>   
         </SheetTrigger>
         <SheetContent>

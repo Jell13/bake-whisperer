@@ -9,18 +9,20 @@ const CartDisplayBox = ({item}) => {
         <DialogTrigger className='flex flex-col'>
             <Image src={item.image} alt="strawshort" width={300} height={100} className='rounded-2xl'/>
             <div className='flex flex-col items-start text-left'>
-            <h4 className='font-Corn text-[1.5rem] mt-5 text-wrap'>{item.name}</h4>
-            <p className='text-wrap mt-5'>{item.desc}</p>
+              <h4 className='font-Corn text-[1.5rem] mt-5 text-wrap'>{item.name}</h4>
+              <p className='text-wrap mt-2'>${item.price}</p>
             </div>
         </DialogTrigger>
         <DialogContent className="bg-soft">
-        <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-                This action cannot be undone. This will permanently delete your account
-                and remove your data from our servers.
-            </DialogDescription>
-            </DialogHeader>
+          <DialogHeader className="flex flex-col justify-center items-center">
+              <Image src={item.image} alt='strawshort' width={200} height={200} className='rounded-2xl'/>
+              <div className='w-full flex flex-col justify-start'>
+                <DialogTitle>{item.name}</DialogTitle>
+                <DialogDescription>
+                    {item.desc}
+                </DialogDescription>
+              </div>
+          </DialogHeader>
         </DialogContent>
         </Dialog>
     </div>
