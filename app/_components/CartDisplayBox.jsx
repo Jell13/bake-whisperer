@@ -45,13 +45,12 @@ import React, { useState } from 'react';
 
 const CartDisplayBox = ({ item }) => {
   const [selectedAddons, setSelectedAddons] = useState([]);
+  const [active, setActive] = useState(false)
+  const [topper, setTopper] = useState("")
 
   // Define the available addons
   const addons = [
-    { id: 'sprinkles', label: 'Sprinkles', price: 2 },
-    { id: 'chocolate-chips', label: 'Chocolate Chips', price: 3 },
-    { id: 'fresh-fruits', label: 'Fresh Fruits', price: 5 },
-    { id: 'whipped-cream', label: 'Whipped Cream', price: 4 },
+    { id: 'cake_topper', label: 'Cake Topper', price: 2 },
   ];
 
   // Handle addon selection
@@ -59,8 +58,10 @@ const CartDisplayBox = ({ item }) => {
     const { value, checked } = event.target;
     if (checked) {
       setSelectedAddons([...selectedAddons, value]);
+      setActive(!active)
     } else {
       setSelectedAddons(selectedAddons.filter((addon) => addon !== value));
+      setActive(!active)
     }
   };
 
@@ -82,6 +83,7 @@ const CartDisplayBox = ({ item }) => {
             <Image src={item.image} alt="strawshort" width={300} height={100} className='rounded-2xl' />
             <div className='flex flex-col items-start text-left'>
               <h4 className='font-Corn text-[1.5rem] mt-5 text-wrap'>{item.name}</h4>
+              <p className='text-wrap'>{item.desc}</p>
               <p className='text-wrap mt-2'>${item.price}</p>
             </div>
           </div>
@@ -90,58 +92,48 @@ const CartDisplayBox = ({ item }) => {
           </div>
         </DialogTrigger>
         <DialogContent className="bg-soft text-softer">
-          <DialogHeader className="flex flex-col gap-4 justify-center items-center">
+          <DialogHeader className="flex flex-col gap-4 justify-center items-center relative">
             <Image src={item.image} alt='strawshort' width={200} height={200} className='rounded-2xl' />
             <div className='w-full flex flex-col justify-start'>
               <DialogTitle className="text-walnut text-center">{item.name}</DialogTitle>
-              {/* <DialogDescription className="flex flex-col mt-3">
-                {item.desc}
-              </DialogDescription> */}
 
               {/* Addon Selection Form */}
-              <div className="mt-2">
-                <h3 className="text-walnut text-lg font-semibold">Select Addons</h3>
-                {addons.map((addon) => (
-                  <div key={addon.id} className="flex items-center mb-2">
-                    <input
-                      type="checkbox"
-                      id={addon.id}
-                      value={addon.id}
-                      checked={selectedAddons.includes(addon.id)}
-                      onChange={handleAddonChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor={addon.id} className="text-softer">
-                      {addon.label} (+${addon.price})
-                    </label>
+              {item.type === "cake" && (
+                <>
+                  <div className="mt-2">
+                    <h3 className="text-walnut text-lg font-semibold">Select Addons</h3>
+                    {addons.map((addon) => (
+                      <div key={addon.id} className='flex flex-col'>
+                        <div className="flex items-center mb-2">
+                          <input
+                            type="checkbox"
+                            id={addon.id}
+                            value={addon.id}
+                            checked={selectedAddons.includes(addon.id)}
+                            onChange={handleAddonChange}
+                            className="mr-2"
+                          />
+                          <label htmlFor={addon.id} className="text-softer">
+                            {addon.label} (+${addon.price})
+                          </label>
+                        </div>
+                        <input value={topper} onChange={(e) => setTopper(e.target.value)} type="text" className={`${active ? "flex" : "hidden"} duration-300 px-2 py-1 rounded-xl outline-none border-none`}/>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-
-              {/* Display Selected Addons */}
-              {/* <div className="mt-2">
-                <h3 className="text-walnut text-lg font-semibold">Selected Addons</h3>
-                {selectedAddons.length > 0 ? (
-                  <ul className="list-disc list-inside mt-2">
-                    {selectedAddons.map((addonId) => {
-                      const addon = addons.find((a) => a.id === addonId);
-                      return (
-                        <li key={addonId} className="text-softer">
-                          {addon?.label} (+${addon?.price})
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : (
-                  <p className="text-softer">No addons selected.</p>
-                )}
-              </div> */}
+                </>
+              )}
+            
 
               {/* Display Total Price */}
               <div className="mt-6">
                 <h3 className="text-walnut text-lg font-semibold">Total Price</h3>
                 <p className="text-softer">${totalPrice}</p>
               </div>
+
+              <button className='absolute right-0 bottom-0 px-2 py-2 bg-softer text-walnut rounded-xl hover:scale-95 duration-300'>
+                Add to cart
+              </button>
             </div>
           </DialogHeader>
         </DialogContent>

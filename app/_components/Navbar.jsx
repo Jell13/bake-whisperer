@@ -252,6 +252,7 @@ export const NavBarScrollRouted = () => {
 
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { RxCross2 } from "react-icons/rx";
 export const NavBarScrollCart = () => {
   const[active, setActive] = useState(false);
 
@@ -272,30 +273,44 @@ export const NavBarScrollCart = () => {
     }
   }
 
-  const links = [
-    {
-      id: 0,
-      name: "Home",
-      path: "/#home"
-    }
-  ]
   return (
-    <>
-      <Sheet>
-        <SheetTrigger className='text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-3 bg-beige top-7 rounded-full size-16  hover:scale-90'>
-          <HiOutlineShoppingBag size={30} className="text-walnut"/>   
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
-            <SheetDescription>
-              This action cannot be undone. This will permanently delete your account
-              and remove your data from our servers.
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
-
+     <>
+      <motion.button
+      initial={{scale: 0}}
+      animate={{scale: 1}}
+      whileHover={{
+        scale: 0.8,
+        transition: {duration: 0.3}
+      }}
+      onClick={() => setActive(!active)}
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-beige top-7 rounded-full size-16  hover:scale-90'>
+        <HiOutlineShoppingBag size={30} className={`${!active ? "flex" : "hidden"} text-walnut`}/>
+        <RxCross2 size={30} className={`${active ? "flex" : "hidden"} text-walnut`}/>
+      </motion.button>
+      {active && 
+      <motion.div
+      className='w-full h-screen fixed top-0 left-0 z-30 justify-end duration-300'>
+        <div className='w-full h-screen flex justify-end font-Corn'>
+          <motion.div 
+          initial={{x: active ? 500 : 0}}
+          animate={{x: active ? 0: 500, transition: {duration: 0.8, ease:[0.76, 0, 0.24, 1], delay: 0.05}}}
+          exit={{x: active && 0}}
+          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-beige text-white'>
+            <div></div>
+            <motion.nav 
+            variants={staggerChildren}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className='relative w-full h-full px-10 leading-tight flex flex-col mt-20'>
+              <h2 className="text-walnut text-3xl font-semibold">Cart</h2>
+            </motion.nav>
+            {/* <div className="flex self-center mt-10">
+              <Image src="/logo-bw.png" width={200} height={200} alt="logo"/>
+            </div> */}
+          </motion.div>
+        </div>
+      </motion.div>}
     </>
   )
 }

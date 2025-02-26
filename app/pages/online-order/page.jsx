@@ -7,24 +7,24 @@ import { NavBarScrollCart } from '@/app/_components/Navbar';
 const page = () => {
 
   const cakes = [
-    {name: "Strawberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices", price: 37, image:"/strawshort.jpg"},
-    {name: "Blueberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with blueberry confit, fresh cream, and blueberries", price: 37, image:"/blueberry.jpg"},
-    {name: "Basque Burnt Cheesecake", desc: "Extra creamy burnt cheesecake", price: 37, image:"/cheese.jpg"},
-    {name: "Tiramisu Cake", desc: "A light, soft, and airy coffee chiffon cake filled with mascarpone cream and dusted with cocoa powder", price: 37, image:"/tiramisu.jpg"}
+    {name: "Strawberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices", price: 37, image:"/strawshort.jpg", type: "cake"},
+    {name: "Blueberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with blueberry confit, fresh cream, and blueberries", price: 37, image:"/blueberry.jpg", type: "cake"},
+    {name: "Basque Burnt Cheesecake", desc: "Extra creamy burnt cheesecake", price: 37, image:"/cheese.jpg", type: "cake"},
+    {name: "Tiramisu Cake", desc: "A light, soft, and airy coffee chiffon cake filled with mascarpone cream and dusted with cocoa powder", price: 37, image:"/tiramisu.jpg", type: "cake"}
   ]
 
   const puffs = [
-    {name: "Original", desc: "", price: 16, image: "/puff_og.jpg"},
-    {name: "Matcha", desc: "", price: 16, image: "/puff_matcha.jpg"},
-    {name: "Chocolate Milk", desc: "", price: 16, image: "/puff_coco.jpg"}
+    {name: "Original", desc: "", price: 16, image: "/puff_og.jpg", type: "puff"},
+    {name: "Matcha", desc: "", price: 16, image: "/puff_matcha.jpg", type: "puff"},
+    {name: "Chocolate Milk", desc: "", price: 16, image: "/puff_coco.jpg", type: "puff"}
   ]
 
   const brownies = [
-    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg"}
+    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg", type: "brown"}
   ]
   return (
     <ReactLenis root>
-      <section className='flex flex-col text-softer'>
+      <section className='flex flex-col text-softer py-6'>
         <NavBarScrollCart/>
         <nav className='flex items-center justify-between pr-8 bg-soft'>
           <div className='flex gap-3 items-center'>
