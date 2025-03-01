@@ -8,7 +8,7 @@ const Shop = () => {
 
   const tiramisu = {
     name: "Tiramisu",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", "Flour"],
     images: "/tiramisu.jpg",
     price: ["$37"],
     path: "/pages/tiramisu"
@@ -16,7 +16,7 @@ const Shop = () => {
 
   const strawshort = {
     name: "Strawberry Shortcake",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", "Flour"],
     images: "/strawshort.jpg",
     price: ["$37"],
     path: "/pages/strawberry"
@@ -24,7 +24,7 @@ const Shop = () => {
 
   const blueberry = {
     name : "Blueberry Shortcake",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", "Flour"],
     images: "/blueberry.jpg",
     price: ["$37"],
     path: "/pages/blueberry"
@@ -32,15 +32,15 @@ const Shop = () => {
 
   const cream = {
     name: "Cream Puffs",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", "Flour"],
     images: "/cream_puffs.jpg",
-    price: ["$30 /", " $33"],
+    price: ["12 Pieces", " $33"],
     path: "/pages/cream-puffs"
   }
 
   const brownies = {
     name: "Fudgy Brownies",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", "Flour", "Tree Nuts"],
     images: "/brown.jpg",
     price: ["$22 /", " $24"],
     path: "/pages/brownies"
@@ -48,7 +48,7 @@ const Shop = () => {
 
   const cheese = {
     name: "Basque Burnt Cheesecake",
-    ingredients: ["test", "marquee", "for", "ingredients", "animation"],
+    ingredients: ["Dairy", "Egg", " Flour"],
     images: "/cheese.jpg",
     price: ["$30"],
     path: "/pages/cheese"
@@ -79,7 +79,7 @@ const Shop = () => {
         <motion.div 
         style={{ y: col2Y }}
         className='col-start-2 col-span-1 flex flex-col gap-6 translate-y-48'>
-          <h3 className='-translate-y-24 font-Corn text-walnut text-5xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <h3 className='-translate-y-24 font-Corn text-walnut text-5xl font-semibold'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
           <DisplayBox details={brownies}/>
         </motion.div>

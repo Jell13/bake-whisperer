@@ -1,52 +1,18 @@
-// import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-// import { HiOutlinePlus } from "react-icons/hi2";
-// import Image from 'next/image'
-// import React from 'react'
-
-// const CartDisplayBox = ({item}) => {
-//   return (
-//     <div className='w-full group relative py-5'>
-//       <Dialog>
-//         <DialogTrigger className='flex flex-col'>
-//           <div className='group-hover:scale-95 duration-300'>
-//             <Image src={item.image} alt="strawshort" width={300} height={100} className='rounded-2xl'/>
-//             <div className='flex flex-col items-start text-left'>
-//               <h4 className='font-Corn text-[1.5rem] mt-5 text-wrap'>{item.name}</h4>
-//               <p className='text-wrap mt-2'>${item.price}</p>
-//             </div>
-//           </div>
-//           <div className='absolute bottom-0 right-0 rounded-full text-walnut bg-softer p-2 cursor-pointer'>
-//             <HiOutlinePlus size={30}/>
-//           </div>
-//         </DialogTrigger>
-//         <DialogContent className="bg-soft text-softer">
-//           <DialogHeader className="flex flex-col gap-4 justify-center items-center">
-//               <Image src={item.image} alt='strawshort' width={200} height={200} className='rounded-2xl'/>
-//               <div className='w-full flex flex-col justify-start'>
-//                 <DialogTitle className="text-walnut">{item.name}</DialogTitle>
-//                 <DialogDescription className="flex flex-col mt-3">
-//                     {item.desc}
-//                 </DialogDescription>
-//               </div>
-//           </DialogHeader>
-//         </DialogContent>
-//       </Dialog>
-//     </div>
-//   )
-// }
-
-// export default CartDisplayBox
-
 "use client"
+
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { HiOutlinePlus } from "react-icons/hi2";
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { useMutation } from "convex/react";
+import { api } from '@/convex/_generated/api';
+
 
 const CartDisplayBox = ({ item }) => {
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [active, setActive] = useState(false)
   const [topper, setTopper] = useState("")
+  const addCart = useMutation(api.carts.createCart)
 
   // Define the available addons
   const addons = [
@@ -74,6 +40,21 @@ const CartDisplayBox = ({ item }) => {
     },
     basePrice
   );
+
+  const handleSubmit = async () => {
+    const userId = localStorage.getItem("userUid")
+    const name = item.name
+    const productId = active ? `${item.id}-top-${topper}` : item.id
+    const topperText = active ? topper : ""
+    await addCart({
+      userId: userId,
+      name: name,
+      price: totalPrice,
+      quantity: 1,
+      productId: productId,
+      topper: {text: topperText}
+    })
+  }
 
   return (
     <div className='w-full group relative py-5'>
@@ -131,7 +112,7 @@ const CartDisplayBox = ({ item }) => {
                 <p className="text-softer">${totalPrice}</p>
               </div>
 
-              <button className='absolute right-0 bottom-0 px-2 py-2 bg-softer text-walnut rounded-xl hover:scale-95 duration-300'>
+              <button onClick={() => handleSubmit()} className='absolute right-0 bottom-0 px-2 py-2 bg-softer text-walnut rounded-xl hover:scale-95 duration-300'>
                 Add to cart
               </button>
             </div>

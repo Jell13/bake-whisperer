@@ -38,7 +38,7 @@ const About = () => {
             {[words.map((word, id) => (
                 <motion.span 
                 variants={wordVariants}
-                key={id} className='md:text-[3rem] text-4xl font-Corn tracking-tighter text-walnut font-medium'>{word}&nbsp;</motion.span>
+                key={id} className='md:text-[3rem] text-4xl font-Corn tracking-tighter text-walnut font-semibold'>{word}&nbsp;</motion.span>
             ))]}
         </motion.h3>
         <div className='mt-8 text-softer text-[1.5rem] tracking-tighter'>
