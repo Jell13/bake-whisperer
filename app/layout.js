@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import { ConvexClientProvider } from "./_provider/ConvexClientProvider";
 import "./globals.css";
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         className={`antialiased bg-soft`}
       >
         <ConvexClientProvider>
+          <Toaster style={{background: "#DDD1C5", color: "#773F1A"}}/>
           {children}
         </ConvexClientProvider>
       </body>

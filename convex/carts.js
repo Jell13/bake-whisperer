@@ -100,12 +100,29 @@ export const addItem = mutation({
     }
 })
 
+export const completeCart = mutation({
+    args: {
+        userId: v.string()
+    },
+    handler: async (ctx, args) => {
+        const activeCart = await ctx.db.query("shoppingCarts").filter(q => q.eq(q.field("userId"), args.userId))
+        .filter(q => q.eq(q.field("status"), "active")).unique()
+
+        console.log(activeCart)
+
+        if (activeCart){
+            await ctx.db.patch(activeCart._id, {status: "completed"})
+        }
+    }
+})
+
 export const getCart = query({
     args: {
         userId: v.string()
     },
     handler: async (ctx, args) => {
         const activeCart = await ctx.db.query("shoppingCarts").filter(q => q.eq(q.field("userId"), args.userId))
+        .filter(q => q.eq(q.field("status"), "active"))
         .unique()
         console.log(activeCart)
         if (activeCart && activeCart.items.length > 0){

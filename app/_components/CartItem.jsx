@@ -5,6 +5,7 @@ import { HiOutlineMinus } from "react-icons/hi2";
 import { HiOutlinePlus } from "react-icons/hi";
 import { api } from '@/convex/_generated/api';
 import { useMutation } from 'convex/react';
+import { toast } from 'sonner';
 
 const CartItem = ({item}) => {
     const userId = localStorage.getItem("userUid")
@@ -14,7 +15,6 @@ const CartItem = ({item}) => {
     const addItem = useMutation(api.carts.addItem)
     const handleRemove = () => {
         removeItem({userId, productId})
-        // console.log(productId)
     }
     
     const handleAdd = () => {

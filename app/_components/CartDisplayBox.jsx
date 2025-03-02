@@ -5,6 +5,7 @@ import { HiOutlinePlus } from "react-icons/hi2";
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { useMutation } from "convex/react";
+import { toast } from 'sonner'
 import { api } from '@/convex/_generated/api';
 
 
@@ -46,13 +47,18 @@ const CartDisplayBox = ({ item }) => {
     const name = item.name
     const productId = active ? `${item.id}-top-${topper}` : item.id
     const topperText = active ? topper : ""
-    await addCart({
+    const create = await addCart({
       userId: userId,
       name: name,
       price: totalPrice,
       quantity: 1,
       productId: productId,
       topper: {text: topperText}
+    })
+
+    toast.promise(create, {
+      success: "Item added to cart",
+      error: "Failed to add item to cart.",
     })
   }
 
