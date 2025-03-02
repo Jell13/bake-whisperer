@@ -9,11 +9,12 @@ import { api } from '@/convex/_generated/api';
 import CartItem from '@/app/_components/CartItem';
 import { PiWhatsappLogoLight } from 'react-icons/pi';
 import { toast } from 'sonner';
-import { Router } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
 
     const[userId, setUserId] = useState(null)
+    const router = useRouter()
     useEffect(() => {
         if (typeof window !== "undefined") {
         const userUid = localStorage.getItem("userUid");
@@ -70,6 +71,7 @@ const page = () => {
 
 
             await creatingOrder()
+            router.push("finish-order")
 
             setName("")
             setEmail("")
