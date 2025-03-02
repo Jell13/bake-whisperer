@@ -21,7 +21,7 @@ const page = () => {
   ]
 
   const brownies = [
-    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg", type: "brown"}
+    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg", type: "brown", id: "brownies"}
   ]
   return (
     <ReactLenis root>
