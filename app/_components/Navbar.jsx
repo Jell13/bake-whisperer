@@ -256,10 +256,17 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import CartItem from "./CartItem";
 export const NavBarScrollCart = () => {
+
+  const[userId, setUserId] = useState(null)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const userUid = localStorage.getItem("userUid");
+      setUserId(userUid);
+    }
+  }, []);
   const[active, setActive] = useState(false);
   const[cart, setCart] = useState([])
   const[totalPrice, setTotal] = useState(0)
-  const userId = localStorage.getItem("userUid")
   const activeCart = useQuery(api.carts.getCart, {userId})
 
   useEffect(() => {

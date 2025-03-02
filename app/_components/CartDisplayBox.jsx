@@ -3,13 +3,20 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { HiOutlinePlus } from "react-icons/hi2";
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMutation } from "convex/react";
 import { toast } from 'sonner'
 import { api } from '@/convex/_generated/api';
 
 
 const CartDisplayBox = ({ item }) => {
+  const[userId, setUserId] = useState(null)
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        const userUid = localStorage.getItem("userUid");
+        setUserId(userUid);
+      }
+    }, []);
   const [selectedAddons, setSelectedAddons] = useState([]);
   const [active, setActive] = useState(false)
   const [topper, setTopper] = useState("")
@@ -43,7 +50,6 @@ const CartDisplayBox = ({ item }) => {
   );
 
   const handleSubmit = async () => {
-    const userId = localStorage.getItem("userUid")
     const name = item.name
     const productId = active ? `${item.id}-top-${topper}` : item.id
     const topperText = active ? topper : ""

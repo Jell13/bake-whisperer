@@ -13,7 +13,13 @@ import { Router } from 'next/router';
 
 const page = () => {
 
-    const userId = localStorage.getItem("userUid")
+    const[userId, setUserId] = useState(null)
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+        const userUid = localStorage.getItem("userUid");
+        setUserId(userUid);
+        }
+    }, []);
     const[totalPrice, setTotal] = useState(0)
     const[name, setName] = useState("")
     const[email, setEmail] = useState("")
@@ -21,6 +27,7 @@ const page = () => {
     const activeCart = useQuery(api.carts.getCart, {userId})  
     const completeCart = useMutation(api.carts.completeCart)
     const createOrder = useMutation(api.orders.createOrder)  
+
 
     useEffect(() => {
         if (activeCart && activeCart.items) {

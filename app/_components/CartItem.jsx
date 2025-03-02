@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HiOutlineMinus } from "react-icons/hi2";
 import { HiOutlinePlus } from "react-icons/hi";
 import { api } from '@/convex/_generated/api';
@@ -8,7 +8,14 @@ import { useMutation } from 'convex/react';
 import { toast } from 'sonner';
 
 const CartItem = ({item}) => {
-    const userId = localStorage.getItem("userUid")
+    
+    const[userId, setUserId] = useState(null)
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+        const userUid = localStorage.getItem("userUid");
+        setUserId(userUid);
+        }
+    }, []);
     const productId = item.productId
     const price = item.price
     const removeItem = useMutation(api.carts.removeItem)
