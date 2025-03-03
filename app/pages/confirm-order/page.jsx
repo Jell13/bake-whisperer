@@ -36,13 +36,14 @@ const page = () => {
             setTotal(newTotalPrice);
         }
     }, [activeCart]);
-    const creatingOrder = async () => {
+    const creatingOrder = async (cartId) => {
         const orderCreation = await createOrder({
             userId: userId,
             name: name,
             email: email,
             date: date,
-            totalPrice: totalPrice
+            totalPrice: totalPrice,
+            cartId: cartId
         })
         toast.promise(orderCreation, {
             success: "Order has been placed successfully",
@@ -67,16 +68,18 @@ const page = () => {
             return;
         }
         else{
-            const markComplete = await completeCart({userId})
+            const completedCart = await completeCart({userId})
+            // console.log(completedCart)
+            // setCartId(completedCart._id)
 
-
-            await creatingOrder()
-            router.push("finish-order")
+            await creatingOrder(completedCart._id)
 
             setName("")
             setEmail("")
             setDate("")
             setTotal(0)
+
+            router.push("finish-order")
         }
     }
 

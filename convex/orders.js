@@ -7,11 +7,12 @@ export const createOrder = mutation({
         name: v.string(),
         email: v.string(),
         date: v.string(),
-        totalPrice: v.number()
+        totalPrice: v.number(),
+        cartId: v.id("shoppingCarts")
     },
     handler: async (ctx, args) => {
         const completedCart = await ctx.db.query("shoppingCarts").filter(q => q.eq(q.field("userId"), args.userId))
-        .filter(q => q.eq(q.field("status"), "completed")).first()
+        .filter(q => q.eq(q.field("status"), "completed")).filter(q => q.eq(q.field("_id"), args.cartId)).unique()
 
         if(completedCart){
             await ctx.db.insert("orders", {
@@ -23,5 +24,15 @@ export const createOrder = mutation({
                 totalPrice: args.totalPrice
             })
         }
+    }
+})
+
+export const getOrder = query({
+    args:{
+        userId: v.string()
+    },
+    handler: async (ctx, args) => {
+        const allOrders = await ctx.db.query("orders").filter(q => q.eq(q.field("userId"), args.userId)).order(q => q.desc(q.field("_creationTime"))).collect()
+        return allOrders[0]
     }
 })
