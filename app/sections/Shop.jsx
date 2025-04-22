@@ -68,7 +68,7 @@ const Shop = () => {
     <motion.div 
     id='shop'
     ref={shopRef}
-    className='md:pt-32 px-8 text-secondary'>
+    className='md:pt-32 md:px-8 px-4 text-secondary'>
       <div className='md:grid hidden grid-cols-3 gap-x-6 pt-32 md:mb-48'>
         <motion.div 
         style={{ y: col1Y }}
@@ -93,7 +93,7 @@ const Shop = () => {
       <div className='md:hidden grid-cols-1 gap-y-6 md:pt-32 pt-12'>
         <motion.div 
           className='col-span-1 flex flex-col gap-6'>
-          <h3 className='font-Corn text-walnut text-4xl font-medium'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
+          <h3 className='font-Corn text-walnut text-4xl font-semibold'>OUR <span>FRESH</span> BAKED PRODUCTS</h3>
           <DisplayBox details={strawshort}/>
           <DisplayBox details={brownies}/>
         </motion.div>

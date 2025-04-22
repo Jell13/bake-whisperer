@@ -59,6 +59,10 @@ const page = () => {
     const handleClick = async () => {
         const currDate = new Date()
         const dateSelected = new Date(date)
+
+        currDate.setHours(0, 0, 0, 0)
+        dateSelected.setHours(0, 0, 0, 0)
+
         if (!name || !email || !date) {
             toast.error("Please fill in all fields.");
             return;
@@ -67,11 +71,19 @@ const page = () => {
             toast.error("Invalid date selected.");
             return;
         }
+
+        const timeDifference = dateSelected.getTime() - currDate.getTime();
+        const daysDifference = timeDifference / (1000 * 3600 * 24);
     
         if (dateSelected <= currDate) {
             toast.error("Selected date must be in the future.");
             return;
         }
+        else if (daysDifference < 5) {
+            toast.error("Selected date must be at least 5 days in the future.");
+            return;
+        }
+        
         else{
             const completedCart = await completeCart({userId})
 

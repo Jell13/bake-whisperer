@@ -8,7 +8,7 @@ const Info = () => {
 
   const phoneNumber = 6266893322
   return (
-    <div id='info' className='bg-softer rounded-t-3xl px-12 pt-12'>
+    <div id='info' className='bg-softer rounded-t-3xl px-12 pt-12 py-10'>
       <div className='flex flex-col'>
         <div className='flex flex-col mb-10'>
           <h3 className='font-Corn text-[3rem] tracking-tighter font-semibold text-walnut'>
@@ -21,7 +21,7 @@ const Info = () => {
           </h4>
         </div>
         <div className=' w-full flex flex-col mb-4'>
-          <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
+          <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 md:p-4 p-2 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
           <div className='flex md:flex-row flex-col justify-around mt-10 items-center'>
             <div>
               <img src="/logo-bw.png" alt="" className='md:w-[300px] w-[200px]'/>
