@@ -15,9 +15,9 @@ const page = () => {
   ]
 
   const puffs = [
-    {name: "Cream Puff Original", desc: "", price: 33, image: "/puff_og.jpg", type: "puff", id: "puff_og"},
-    {name: "Cream Puff Matcha", desc: "", price: 33, image: "/puff_matcha.jpg", type: "puff", id: "puff_matcha"},
-    {name: "Cream Puff Chocolate Milk", desc: "", price: 33, image: "/puff_coco.jpg", type: "puff", id: "puff_choco"}
+    {name: "Cream Puff Original", desc: "12 piece original cream puffs", price: 33, image: "/puff_og.jpg", type: "puff", id: "puff_og"},
+    {name: "Cream Puff Matcha", desc: "12 piece matcha cream puffs", price: 33, image: "/puff_matcha.jpg", type: "puff", id: "puff_matcha"},
+    {name: "Cream Puff Chocolate Milk", desc: "12 piece chocolate milk cream puffs", price: 33, image: "/puff_coco.jpg", type: "puff", id: "puff_choco"}
   ]
 
   const brownies = [
@@ -27,18 +27,18 @@ const page = () => {
     <ReactLenis root>
       <section className='flex flex-col text-softer py-6'>
         <NavBarScrollCart/>
-        <nav className='flex items-center justify-between px-8 bg-soft'>
-          <div className='flex gap-3 items-center'>
+        <nav className='flex items-center justify-between md:px-8 px-6 bg-soft'>
+          <div className='flex gap-4 items-center'>
             <Link href={"/"}>
               <div className='flex items-center p-2 py-1 border-[1px] text-[1rem] border-walnut text-walnut font-Open rounded-xl hover:bg-walnut hover:text-beige duration-300'>
                   <HiOutlineChevronLeft/>
                   <p>Back</p>
               </div>
             </Link>
-            <h2 className='font-Corn md:text-[3rem] text-[1.5rem] font-semibold text-walnut tracking-tighter'>Online Ordering</h2>
+            <h2 className='font-Corn md:text-[3rem] text-[2rem] font-semibold text-walnut tracking-tighter'>Online Ordering</h2>
           </div>
         </nav>
-        <div className='flex px-12 justify-between gap-4'>
+        <div className='flex md:px-12 px-6 justify-between gap-4 mt-7 md:mt-0'>
           <div className='flex flex-col w-full'>
             <h3 className='font-Corn text-walnut md:text-[2.5rem] text-[2rem] font-semibold tracking-tighter'>Cakes</h3>
             <div className='grid md:grid-cols-3 grid-cols-2 w-full mt-5 gap-4'>

@@ -117,21 +117,6 @@ export const completeCart = mutation({
     }
 })
 
-export const getCompleteCart = query({
-    args:{
-        userId: v.string()
-    },
-    handler: async (ctx, args) => {
-        const activeCart = await ctx.db.query("shoppingCarts").filter(q => q.eq(q.field("userId"), args.userId))
-        .filter(q => q.eq(q.field("status"), "completed")).order(q => q.desc(q.field("_creationTime")))
-        .first()
-        console.log(activeCart)
-        if (activeCart && activeCart.items.length > 0){
-            return activeCart
-        }
-    }
-})
-
 export const getCart = query({
     args: {
         userId: v.string()

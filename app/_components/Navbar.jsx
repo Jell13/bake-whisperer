@@ -48,7 +48,7 @@ const NavBarFixed = () => {
     },
     {
       id: 4,
-      name: "Info",
+      name: "Info & Shop",
       path: "#info"
     }
   ]
@@ -62,7 +62,7 @@ const NavBarFixed = () => {
         transition={{ease: [0.6, 0.01, -0.05, 0.9], duration: 1.3}}
         />
       </div>
-      <nav className='flex md:gap-4 gap-1 col-start-1 col-span-4 md:justify-start lg:pl-6 md:items-center flex-col md:flex-row pr-6'>
+      <nav className='flex md:gap-4 gap-1 col-start-1 col-span-4 md:justify-start lg:pl-6 md:items-center flex-col md:flex-row pr-6 flex-wrap'>
         {links.map(({id, name, path}) => (
           <a 
           href={path}
@@ -117,7 +117,7 @@ export const NavBarScroll = () => {
     },
     {
       id: 3,
-      name: "Info",
+      name: "Info & Shop",
       path: "#info"
     }
   ]
@@ -286,7 +286,7 @@ export const NavBarScrollCart = () => {
         transition: {duration: 0.3}
       }}
       onClick={() => setActive(!active)}
-      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-beige top-7 rounded-full size-16  hover:scale-90'>
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-3 bg-beige top-7 rounded-full size-16  hover:scale-90'>
         <HiOutlineShoppingBag size={30} className={`${!active ? "flex" : "hidden"} text-walnut`}/>
         <RxCross2 size={30} className={`${active ? "flex" : "hidden"} text-walnut`}/>
       </motion.button>
@@ -317,7 +317,7 @@ export const NavBarScrollCart = () => {
             )}
             {activeCart && activeCart.items.length > 0 && (
               <div className="px-10 pb-5 mt-8">
-                <Link href={"/pages/confirm-order"} className="flex items-center font-Open gap-4 text-walnut text-[1.5rem] rounded-xl border-2 px-2 py-1 border-walnut hover:text-beige hover:bg-walnut">
+                <Link href={"/pages/confirm-order"} className="flex items-center font-Open gap-4 text-walnut text-[1.5rem] rounded-xl border-[1px] px-2 py-1 border-walnut hover:text-beige hover:bg-walnut">
                   <p className="flex items-center">${totalPrice}</p> | <p className="flex items-center">Checkout</p>
                 </Link>
               </div>

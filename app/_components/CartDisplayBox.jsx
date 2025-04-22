@@ -51,8 +51,8 @@ const CartDisplayBox = ({ item }) => {
 
   const handleSubmit = async () => {
     const name = item.name
-    const productId = active ? `${item.id}-top-${topper}` : item.id
-    const topperText = active ? topper : ""
+    const topperText = active ? "topper added" : ""
+    const productId = active ? `${item.id}-top-${topperText}` : item.id
     const create = await addCart({
       userId: userId,
       name: name,
@@ -75,7 +75,7 @@ const CartDisplayBox = ({ item }) => {
           <div className='group-hover:scale-95 duration-300'>
             <Image src={item.image} alt="strawshort" width={300} height={100} className='rounded-2xl' />
             <div className='flex flex-col items-start text-left'>
-              <h4 className='font-Corn text-[1.5rem] mt-5 text-wrap'>{item.name}</h4>
+              <h4 className='font-Corn text-2xl mt-5 text-wrap text-walnut font-semibold'>{item.name}</h4>
               <p className='text-wrap'>{item.desc}</p>
               <p className='text-wrap mt-2'>${item.price}</p>
             </div>
@@ -110,7 +110,7 @@ const CartDisplayBox = ({ item }) => {
                             {addon.label} (+${addon.price})
                           </label>
                         </div>
-                        <input value={topper} onChange={(e) => setTopper(e.target.value)} type="text" className={`${active ? "flex" : "hidden"} duration-300 px-2 py-1 rounded-xl outline-none border-none`}/>
+                        {/* <input value={topper} onChange={(e) => setTopper(e.target.value)} type="text" className={`${active ? "flex" : "hidden"} duration-300 px-2 py-1 rounded-xl outline-none border-none`}/> */}
                       </div>
                     ))}
                   </div>

@@ -20,12 +20,22 @@ const CartItem = ({item}) => {
     const price = item.price
     const removeItem = useMutation(api.carts.removeItem)
     const addItem = useMutation(api.carts.addItem)
-    const handleRemove = () => {
-        removeItem({userId, productId})
+    const handleRemove = async () => {
+        const cartDelete = await removeItem({userId, productId})
+
+        toast.promise(cartDelete, {
+            success: "Item reduced",
+            error: "Failed to decrease item"
+        })
     }
     
-    const handleAdd = () => {
-        addItem({userId, productId})
+    const handleAdd = async () => {
+        const cartAction = await addItem({userId, productId})
+
+        toast.promise(cartAction, {
+            success: "Item added",
+            error: "Failed to add item to cart.",
+        })
     }
   return (
     <div className='flex flex-col gap-3 text-walnut tracking-tighter p-2 border-[1px] border-walnut rounded-xl'>

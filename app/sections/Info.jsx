@@ -5,6 +5,8 @@ import { PiWhatsappLogoLight } from "react-icons/pi";
 import { SlLocationPin } from "react-icons/sl";
 
 const Info = () => {
+
+  const phoneNumber = 6266893322
   return (
     <div id='info' className='bg-softer rounded-t-3xl px-12 pt-12'>
       <div className='flex flex-col'>
@@ -20,20 +22,19 @@ const Info = () => {
         </div>
         <div className=' w-full flex flex-col mb-4'>
           <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 p-4 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
-          
           <div className='flex md:flex-row flex-col justify-around mt-10 items-center'>
             <div>
               <img src="/logo-bw.png" alt="" className='md:w-[300px] w-[200px]'/>
             </div>
             {/* Links */}
             <div className='md:flex flex-col gap-3 justify-start text-walnut hidden'>
-              <Link href={"https://www.instagram.com/bakewhisperer/"} className='flex items-center gap-3'>
+              <Link href={"https://www.instagram.com/bakewhisperer/"} target='_blank' className='flex items-center gap-3 group'>
                 <PiInstagramLogoLight size={50}/>
-                <p className='text-3xl'>@bakewhisperer</p>
+                <p className='text-3xl group-hover:scale-90 duration-300'>@bakewhisperer</p>
               </Link>
-              <Link href={"/"} className='flex items-center gap-4'>
+              <Link href={`https://wa.me/${phoneNumber}`} target='_blank' className='flex items-center gap-4 group'>
                 <PiWhatsappLogoLight size={50}/>
-                <p className='text-3xl'>626-689-3322</p>
+                <p className='text-3xl group-hover:scale-90 duration-300'>626-689-3322</p>
               </Link>
               <div className='flex items-center gap-4'>
                 <SlLocationPin size={50}/>
@@ -41,11 +42,11 @@ const Info = () => {
               </div>
             </div>
             <div className='flex flex-col gap-3 justify-start text-walnut md:hidden'>
-              <Link href={"https://www.instagram.com/bakewhisperer/"} className='flex items-center gap-3'>
+              <Link href={"https://www.instagram.com/bakewhisperer/"} target='_blank' className='flex items-center gap-3'>
                 <PiInstagramLogoLight size={30}/>
                 <p className='text-2xl'>@bakewhisperer</p>
               </Link>
-              <Link href={"/"} className='flex items-center gap-4'>
+              <Link target='_blank' href={`https://wa.me/${phoneNumber}`} className='flex items-center gap-4'>
                 <PiWhatsappLogoLight size={30}/>
                 <p className='text-2xl'>626-689-3322</p>
               </Link>

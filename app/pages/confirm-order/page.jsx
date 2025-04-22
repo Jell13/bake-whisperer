@@ -10,6 +10,7 @@ import CartItem from '@/app/_components/CartItem';
 import { PiWhatsappLogoLight } from 'react-icons/pi';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+import emailjs from "@emailjs/browser"
 
 const page = () => {
 
@@ -19,6 +20,10 @@ const page = () => {
         if (typeof window !== "undefined") {
         const userUid = localStorage.getItem("userUid");
         setUserId(userUid);
+        emailjs.init({
+            publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+            blockHeadless: true
+        })
         }
     }, []);
     const[totalPrice, setTotal] = useState(0)
@@ -69,10 +74,29 @@ const page = () => {
         }
         else{
             const completedCart = await completeCart({userId})
-            // console.log(completedCart)
-            // setCartId(completedCart._id)
 
             await creatingOrder(completedCart._id)
+
+            const orderDetails = completedCart.items
+            .map((item) => `${item.name}, Quantity:${item.quantity} - $${item.price}, ${item.topper.text.length > 0 ? "No topper" : "With topper"}`)
+            .join("\n");
+
+            const templateParams = {
+                name: `${name}`,
+                email: `${email}`,
+                date: `${date}`,
+                orderDetails: `${orderDetails}`,
+                totalPrice: `$${totalPrice}`
+            }
+
+            emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, templateParams).then(
+                (res) => {
+                    console.log("success")
+                },
+                (error) => {
+                    console.log(error)
+                }
+            )
 
             setName("")
             setEmail("")
@@ -86,7 +110,7 @@ const page = () => {
   return (
     <ReactLenis root>
         <div className='py-6 flex flex-col relative'>
-            <nav className='flex items-center justify-between px-8 bg-soft'>
+            <nav className='flex items-center justify-between md:px-8 px-6 bg-soft'>
                 <div className='flex gap-5 items-center'>
                     <Link href={"/pages/online-order"}>
                         <div className='flex items-center p-2 py-1 border-[1px] text-[1rem] border-walnut text-walnut font-Open rounded-xl hover:bg-walnut hover:text-beige duration-300'>
@@ -94,11 +118,11 @@ const page = () => {
                             <p>Back</p>
                         </div>
                     </Link>
-                    <h2 className='font-Corn md:text-[3rem] text-[1.5rem] font-semibold text-walnut tracking-tighter'>Order Confirmation</h2>
+                    <h2 className='font-Corn md:text-[3rem] text-[2rem] font-semibold text-walnut tracking-tighter'>Order Confirmation</h2>
                 </div>
             </nav>
-            <div className='flex justify-between px-8 mt-8 gap-32 text-walnut tracking-tighter'>
-                <div className='flex flex-col w-2/3 gap-4'>
+            <div className='flex md:flex-row flex-col justify-between px-8 mt-8 md:gap-32 gap-20 text-walnut tracking-tighter'>
+                <div className='flex flex-col md:w-2/3 w-full gap-4'>
                     <div className='flex flex-col gap-3'>
                         <label className='text-[1rem] text-walnut font-medium font-Open' htmlFor="name">Name for order:</label>
                         <input value={name} onChange={(e) => setName(e.target.value)} className='px-2 py-[2px] rounded-lg border-none outline-none font-Open' id="name" type="text" />
@@ -121,7 +145,7 @@ const page = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-1/3 h-full flex flex-col rounded-xl bg-beige p-4'>
+                <div className='md:w-1/3 w-full h-full flex flex-col rounded-xl bg-beige p-4'>
                     <h3 className='font-Corn tracking-tighter font-semibold text-[2rem]'>Cart</h3>
                     {activeCart && activeCart.items.length > 0 && (
                         <div className='flex flex-col gap-4 mt-6'>
