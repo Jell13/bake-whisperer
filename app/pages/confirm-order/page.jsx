@@ -15,7 +15,9 @@ import emailjs from "@emailjs/browser"
 const page = () => {
 
     const[userId, setUserId] = useState(null)
+    const [minDate, setMinDate] = useState()
     const router = useRouter()
+
     useEffect(() => {
         if (typeof window !== "undefined") {
         const userUid = localStorage.getItem("userUid");
@@ -25,14 +27,23 @@ const page = () => {
             blockHeadless: true
         })
         }
+
+        const today = new Date();
+        const futureDate = new Date(today);
+        futureDate.setDate(today.getDate() + 5);
+        
+        // Format as YYYY-MM-DD for date input
+        const formattedDate = futureDate.toISOString().split('T')[0];
+        setMinDate(formattedDate);
     }, []);
+
     const[totalPrice, setTotal] = useState(0)
     const[name, setName] = useState("")
     const[email, setEmail] = useState("")
     const[date, setDate] = useState("")
     const activeCart = useQuery(api.carts.getCart, {userId})  
     const completeCart = useMutation(api.carts.completeCart)
-    const createOrder = useMutation(api.orders.createOrder)  
+    const createOrder = useMutation(api.orders.createOrder) 
 
 
     useEffect(() => {
@@ -41,6 +52,7 @@ const page = () => {
             setTotal(newTotalPrice);
         }
     }, [activeCart]);
+
     const creatingOrder = async (cartId) => {
         const orderCreation = await createOrder({
             userId: userId,
@@ -144,8 +156,8 @@ const page = () => {
                         <input value={email} onChange={(e) => setEmail(e.target.value)} className='px-2 py-[2px] rounded-lg border-none outline-none font-Open' id='email' type="text" />
                     </div>
                     <div className='flex flex-col gap-3'>
-                        <label className='text-[1rem] text-walnut font-medium font-Open' htmlFor="date">Desired ready time:</label>
-                        <input value={date} onChange={(e) => setDate(e.target.value)} className='px-2 py-[2px] rounded-lg border-none outline-none font-Open' id='email' type="date" />
+                        <label className='text-[1rem] text-walnut font-medium font-Open' htmlFor="date">Desired ready time: <span className="text-sm">(minimum 5 days from today)</span></label>
+                        <input value={date} onChange={(e) => setDate(e.target.value)} {... (minDate ? { min: minDate } : {})} className='px-2 py-[2px] rounded-lg border-none outline-none font-Open' id='email' type="date" />
                     </div>
                     <div className='flex flex-col mt-10 text-walnut font-Open tracking-tighter'>
                         <p className='text-[2rem]'>Disclaimer:</p>
