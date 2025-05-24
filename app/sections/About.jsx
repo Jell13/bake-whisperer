@@ -42,9 +42,11 @@ const About = () => {
             ))]}
         </motion.h3>
         <div className='mt-8 text-softer text-[1.5rem] tracking-tighter'>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit rerum aperiam at nesciunt facilis natus tempore, libero consequatur voluptas, quibusdam amet dolores autem? Quae enim voluptatum harum illum beatae? Aspernatur.</p>
+            <p>At Bake Whisperer, we believe that every baked good tells a story — and we&apos;re here to make sure it&apos;s a delicious one. We&apos;re a small, heart-driven bakery with a big passion for creating sweet moments and unforgettable flavors.</p>
             <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, est vitae magnam sint ullam corporis facere atque quia enim nemo? Fugit harum et modi minima in commodi sequi accusantium obcaecati?</p>
+            <p>What started as a humble kitchen dream has grown into a cozy corner where quality ingredients, time-honored recipes, and a touch of creativity come together. Whether it&apos;s a batch of perfectly baked choux / cream puff, a fluffy chiffon cake for your special celebration, or some pastries to brighten your morning, everything we make is handcrafted with care.</p>
+            <br />
+            <p>We whisper love into every dough, swirl, and sprinkle — because to us, baking is more than a business, it&apos;s a way to bring people together</p>
         </div>
 
         <div className='flex md:justify-end justify-center mt-10 relative'>

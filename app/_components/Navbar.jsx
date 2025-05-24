@@ -38,7 +38,7 @@ const NavBarFixed = () => {
   const links = [
     {
       id: 2,
-      name: "Shop",
+      name: "Products",
       path: "#shop"
     },
     {
@@ -48,7 +48,7 @@ const NavBarFixed = () => {
     },
     {
       id: 4,
-      name: "Info & Shop",
+      name: "Info & Order",
       path: "#info"
     }
   ]
@@ -107,7 +107,7 @@ export const NavBarScroll = () => {
     },
     {
       id: 1,
-      name: "Shop",
+      name: "ProductS",
       path: "#shop"
     },
     {
