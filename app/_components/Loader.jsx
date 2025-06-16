@@ -68,7 +68,7 @@ const Loader = ({setLoading}) => {
       };
 
   return (
-    <motion.div className='w-full h-screen flex justify-center items-center relative'>
+    <motion.div className='w-full h-screen inset-0 flex justify-center items-center relative'>
       <motion.div 
       variants={container}
       initial="hidden"
