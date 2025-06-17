@@ -181,7 +181,7 @@ const GSAPLoader = ({ setLoading }) => {
       width: '100vw',
       height: '100vh',
       zIndex: 9999,
-      backgroundColor: '#f5f5f5', // Light background like your site
+      backgroundColor: '#DDD1C5', // Light background like your site
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'

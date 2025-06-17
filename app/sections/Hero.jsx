@@ -10,34 +10,34 @@ const Hero = ({startAnimation}) => {
   const heroRef = useRef(null)
   const timelineRef = useRef(null);
 
-  useGSAP(() => {
+  // useGSAP(() => {
 
-    const t1 = gsap.timeline();
+  //   const t1 = gsap.timeline();
 
-    gsap.to(heroRef.current, {
-      opacity: 0,
-      y: 50
-    })
+  //   gsap.to(heroRef.current, {
+  //     opacity: 0,
+  //     y: 50
+  //   })
 
-    timelineRef.current = gsap.timeline({ paused: true })
+  //   timelineRef.current = gsap.timeline({ paused: true })
     
-    timelineRef.current.to(heroRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-      delay: 0.2 // Small delay after loader finishes
-    })
-  })
+  //   timelineRef.current.to(heroRef.current, {
+  //     opacity: 1,
+  //     y: 0,
+  //     duration: 0.5,
+  //     ease: "power2.inOut",
+  //     delay: 0.2 // Small delay after loader finishes
+  //   })
+  // })
 
-  useEffect(() => {
-    if (startAnimation && timelineRef.current) {
-      timelineRef.current.play()
-    }
-  }, [startAnimation])
+  // useEffect(() => {
+  //   if (startAnimation && timelineRef.current) {
+  //     timelineRef.current.play()
+  //   }
+  // }, [startAnimation])
 
   return (
-    <div id='home' className='w-screen h-screen px-12 bg-light'>
+    <div id='home' className='w-screen h-screen px-12 bg-'>
       <div ref={heroRef} className='w-full h-full flex flex-col justify-center items-center relative'>
         {/* MAIN TITLE SENTENCE */}
         <div className='flex flex-col items-center gap-6'>
