@@ -46,11 +46,11 @@ export default function Home() {
   
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <GSAPLoader setLoading={setLoading} />
-      ) : ( */}
+      ) : (
         <ReactLenis root>
-          {loading && <GSAPLoader setLoading={setLoading}/>}
+          {/* {loading && <GSAPLoader setLoading={setLoading}/>} */}
           <div>
             <Navbar startAnimation={!loading}/>
             <Hero startAnimation={!loading}/>
@@ -59,7 +59,7 @@ export default function Home() {
             <Info />
           </div>
         </ReactLenis>
-      {/* )} */}
+      )}
     </>
   );
 }
