@@ -19,6 +19,7 @@ export default {
   			walnut: '#773F1A',
   			soft: '#DDD1C5',
 			softer: "#A48B6D",
+			light: "#f5f5f5",
 			cart: "#D4C5B2",
   			card: {
   				DEFAULT: 'hsl(var(--card))',

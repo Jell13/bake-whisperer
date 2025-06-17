@@ -45,41 +45,21 @@ export default function Home() {
   }
   
   return (
-    // <>
-    //   <AnimatePresence>
-    //     <LayoutGroup>
-    //     {loading ? (
-    //       <motion.div>
-    //         <Loader setLoading={setLoading}/>
-    //       </motion.div>
-    //     ): (
-    //       <ReactLenis root>
-    //         <div>
-    //           <Navbar/>
-    //           <Hero/>
-    //           <Shop/>
-    //           <About/>
-    //           <Info/>
-    //         </div>
-    //       </ReactLenis>
-    //     )}
-    //     </LayoutGroup>
-    //   </AnimatePresence>
-    // </>
     <>
-      {loading ? (
+      {/* {loading ? (
         <GSAPLoader setLoading={setLoading} />
-      ) : (
+      ) : ( */}
         <ReactLenis root>
           <div>
-            <Navbar />
-            <Hero />
+            {loading && <GSAPLoader setLoading={setLoading}/>}
+            <Navbar startAnimation={!loading}/>
+            <Hero startAnimation={!loading}/>
             <Shop />
             <About />
             <Info />
           </div>
         </ReactLenis>
-      )}
+      {/* )} */}
     </>
   );
 }

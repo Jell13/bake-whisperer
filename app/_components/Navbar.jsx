@@ -3,10 +3,11 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from "next/image";
+// import gsap from "gsap";
 
-const Navbar = () => {
+const Navbar = ({startAnimation}) => {
   const [isScrolling, setIsScrolling] = useState(false)
 
   const handleScroll = () => {
@@ -29,12 +30,14 @@ const Navbar = () => {
 
   return (
     <>
-      {isScrolling ? <NavBarScroll/> : <NavBarFixed/>}
+      {isScrolling ? <NavBarScroll/> : <NavBarFixed startAnimation={startAnimation}/>}
     </>
   )
 }
 
-const NavBarFixed = () => {
+const NavBarFixed = ({startAnimation}) => {
+
+  const headerRef = useRef();
   const links = [
     {
       id: 2,
@@ -52,10 +55,39 @@ const NavBarFixed = () => {
       path: "#info"
     }
   ]
+
+  const timelineRef = useRef(null);
+
+  useGSAP(() => {
+
+    const t1 = gsap.timeline();
+
+    gsap.to(headerRef.current, {
+      opacity: 0,
+      y: 50
+    })
+
+    timelineRef.current = gsap.timeline({ paused: true })
+    
+    timelineRef.current.to(headerRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+      delay: 0.2 // Small delay after loader finishes
+    })
+  })
+
+  useEffect(() => {
+    if (startAnimation && timelineRef.current) {
+      timelineRef.current.play()
+    }
+  }, [startAnimation])
+
   return (
-    <motion.header className="absolute w-full flex z-50 justify-between items-center md:px-12 px-2 py-4">
+    <header ref={headerRef} className="absolute w-full flex z-50 justify-between items-center md:px-12 px-2 py-4">
       <div className="flex justify-center items-center ">
-        <motion.img
+        <img
         // layoutId='main-title'
         src="/logo-bw.png"
         className="w-[150px]" 
@@ -71,10 +103,10 @@ const NavBarFixed = () => {
           </a>
         ))}
       </nav>
-      <div className="hidden">
+      {/* <div className="hidden">
           
-      </div>
-    </motion.header>
+      </div> */}
+    </header>
   )
 }
 
@@ -107,7 +139,7 @@ export const NavBarScroll = () => {
     },
     {
       id: 1,
-      name: "ProductS",
+      name: "Product",
       path: "#shop"
     },
     {
@@ -117,7 +149,7 @@ export const NavBarScroll = () => {
     },
     {
       id: 3,
-      name: "Info & Shop",
+      name: "Info & Order",
       path: "#info"
     }
   ]
@@ -131,9 +163,9 @@ export const NavBarScroll = () => {
         transition: {duration: 0.3}
       }}
       onClick={() => setActive(!active)}
-      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-4 bg-softer top-7 rounded-full size-16  hover:scale-90'>
-        <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-white": "-translate-y-1 rotate-0"} duration-300`}></span>
-        <span className={`w-7 h-[2px] bg-white absolute rounded-full ${active ? "translate-y-0 -rotate-45 bg-white": "translate-y-1 rotate-0"} duration-300`}></span>
+      className='text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-4 bg-light top-7 rounded-full size-16  hover:scale-90'>
+        <span className={`w-7 h-[2px] bg-softer absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-softer": "-translate-y-1 rotate-0"} duration-300`}></span>
+        <span className={`w-7 h-[2px] bg-softer absolute rounded-full ${active ? "translate-y-0 -rotate-45 bg-softer": "translate-y-1 rotate-0"} duration-300`}></span>
       </motion.button>
       {active && 
       <motion.div
@@ -143,7 +175,7 @@ export const NavBarScroll = () => {
           initial={{x: active ? 500 : 0}}
           animate={{x: active ? 0: 500, transition: {duration: 0.8, ease:[0.76, 0, 0.24, 1], delay: 0.05}}}
           exit={{x: active && 0}}
-          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-softer text-white'>
+          className='w-[36em] lg:max-w-3xl flex flex-col justify-end bg-light text-white'>
             <motion.nav 
             variants={staggerChildren}
             initial="hidden"
@@ -255,6 +287,8 @@ import { RxCross2 } from "react-icons/rx";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import CartItem from "./CartItem";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 export const NavBarScrollCart = () => {
 
   const[userId, setUserId] = useState(null)

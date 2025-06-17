@@ -242,7 +242,7 @@ const GSAPLoader = ({ setLoading }) => {
   };
 
   return (
-    <div ref={containerRef} className="loader-container">
+    <div ref={containerRef} className="loader-container inset-0">
       <div className="relative w-full h-full flex items-center justify-center">
         
         {/* Top Left Cake */}
