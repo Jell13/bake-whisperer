@@ -56,7 +56,7 @@ const NavBarFixed = () => {
     <motion.header className="absolute w-full flex z-50 justify-between items-center md:px-12 px-2 py-4">
       <div className="flex justify-center items-center ">
         <motion.img
-        layoutId='main-title'
+        // layoutId='main-title'
         src="/logo-bw.png"
         className="w-[150px]" 
         transition={{ease: [0.6, 0.01, -0.05, 0.9], duration: 1.3}}

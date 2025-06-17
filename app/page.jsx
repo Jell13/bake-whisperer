@@ -10,12 +10,16 @@ import Shop from "./sections/Shop";
 import About from "./sections/About";
 import Info from "./sections/Info";
 import { v4 as uuidv4 } from 'uuid';
+import GSAPLoader from "./_components/Loader";
 
 export default function Home() {
 
   const [loading, setLoading] = useState(true)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+
+    setMounted(true);
     const storeUid = localStorage.getItem("userUid")
 
     if (!storeUid){
@@ -25,27 +29,57 @@ export default function Home() {
 
     console.log(localStorage.getItem("userUid"))
   }, []);
+
+  if (!mounted) {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#f5f5f5',
+        zIndex: 9999
+      }} />
+    );
+  }
+  
   return (
+    // <>
+    //   <AnimatePresence>
+    //     <LayoutGroup>
+    //     {loading ? (
+    //       <motion.div>
+    //         <Loader setLoading={setLoading}/>
+    //       </motion.div>
+    //     ): (
+    //       <ReactLenis root>
+    //         <div>
+    //           <Navbar/>
+    //           <Hero/>
+    //           <Shop/>
+    //           <About/>
+    //           <Info/>
+    //         </div>
+    //       </ReactLenis>
+    //     )}
+    //     </LayoutGroup>
+    //   </AnimatePresence>
+    // </>
     <>
-      <AnimatePresence>
-        <LayoutGroup>
-        {loading ? (
-          <motion.div>
-            <Loader setLoading={setLoading}/>
-          </motion.div>
-        ): (
-          <ReactLenis root>
-            <div>
-              <Navbar/>
-              <Hero/>
-              <Shop/>
-              <About/>
-              <Info/>
-            </div>
-          </ReactLenis>
-        )}
-        </LayoutGroup>
-      </AnimatePresence>
+      {loading ? (
+        <GSAPLoader setLoading={setLoading} />
+      ) : (
+        <ReactLenis root>
+          <div>
+            <Navbar />
+            <Hero />
+            <Shop />
+            <About />
+            <Info />
+          </div>
+        </ReactLenis>
+      )}
     </>
   );
 }
