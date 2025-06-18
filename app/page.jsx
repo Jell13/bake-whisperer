@@ -50,11 +50,15 @@ export default function Home() {
         <GSAPLoader setLoading={setLoading} />
       ) : ( */}
         <ReactLenis root>
-          {/* {loading && <GSAPLoader setLoading={setLoading}/>} */}
-          <div>
-            {loading && <GSAPLoader setLoading={setLoading}/>}
-            <Navbar startAnimation={!loading}/>
-            <Hero startAnimation={!loading}/>
+          {loading && <GSAPLoader setLoading={setLoading}/>}
+          <div style={{
+            visibility: loading ? 'hidden' : 'visible',
+            opacity: loading ? 0 : 1,
+            position: 'relative',
+            zIndex: 1
+          }}>
+            <Navbar/>
+            <Hero/>
             <Shop />
             <About />
             <Info />
