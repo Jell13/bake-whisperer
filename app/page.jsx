@@ -57,8 +57,8 @@ export default function Home() {
             position: 'relative',
             zIndex: 1
           }}>
-            <Navbar/>
-            <Hero/>
+            <Navbar startAnimation={!loading}/>
+            <Hero startAnimation={!loading}/>
             <Shop />
             <About />
             <Info />

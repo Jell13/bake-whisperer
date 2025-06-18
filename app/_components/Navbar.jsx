@@ -58,31 +58,31 @@ const NavBarFixed = ({startAnimation}) => {
 
   const timelineRef = useRef(null);
 
-  // useGSAP(() => {
+  useGSAP(() => {
 
-  //   const t1 = gsap.timeline();
+    const t1 = gsap.timeline();
 
-  //   gsap.to(headerRef.current, {
-  //     opacity: 0,
-  //     y: 50
-  //   })
+    gsap.to(headerRef.current, {
+      opacity: 0,
+      y: 50
+    })
 
-  //   timelineRef.current = gsap.timeline({ paused: true })
+    timelineRef.current = gsap.timeline({ paused: true })
     
-  //   timelineRef.current.to(headerRef.current, {
-  //     opacity: 1,
-  //     y: 0,
-  //     duration: 0.5,
-  //     ease: "power2.inOut",
-  //     delay: 0.2 // Small delay after loader finishes
-  //   })
-  // })
+    timelineRef.current.to(headerRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+      delay: 0.2 // Small delay after loader finishes
+    })
+  })
 
-  // useEffect(() => {
-  //   if (startAnimation && timelineRef.current) {
-  //     timelineRef.current.play()
-  //   }
-  // }, [startAnimation])
+  useEffect(() => {
+    if (startAnimation && timelineRef.current) {
+      timelineRef.current.play()
+    }
+  }, [startAnimation])
 
   return (
     <header ref={headerRef} className="absolute w-full flex z-50 justify-between items-center md:px-12 px-2 py-4">
