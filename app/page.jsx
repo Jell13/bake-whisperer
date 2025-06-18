@@ -38,7 +38,7 @@ export default function Home() {
         left: 0,
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#DDD1C5',
         zIndex: 9999
       }} />
     );
