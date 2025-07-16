@@ -6,7 +6,7 @@ import { SlLocationPin } from "react-icons/sl";
 
 const Info = () => {
 
-  const phoneNumber = 6266893322
+  const phoneNumber = 6266893322;
   return (
     <div id='info' className='bg-softer rounded-t-3xl px-12 pt-12 py-10'>
       <div className='flex flex-col'>

@@ -18,6 +18,12 @@ const page = () => {
     const [minDate, setMinDate] = useState()
     const router = useRouter()
 
+    const validateEmail = (email) => {
+        // Basic email validation regex
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
     useEffect(() => {
         if (typeof window !== "undefined") {
         const userUid = localStorage.getItem("userUid");
@@ -77,6 +83,11 @@ const page = () => {
 
         if (!name || !email || !date) {
             toast.error("Please fill in all fields.");
+            return;
+        }
+
+        if (!validateEmail(email)){
+            toast.error("Please enter a valid email address.");
             return;
         }
         if (isNaN(dateSelected.getTime())) {
