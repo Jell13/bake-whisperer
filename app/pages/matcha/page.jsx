@@ -8,10 +8,10 @@ import { ReactLenis } from 'lenis/react'
 const page = () => {
 
   const slides = [
-    "/matcha-1.jpg",
+    "/matcha1.jpg",
     "/matcha.jpg",
-    "/matcha-2.jpg",
-    "/matcha-3.jpg",
+    "/matcha2.jpg",
+    "/matcha3.jpg",
   ];
   
   return (
