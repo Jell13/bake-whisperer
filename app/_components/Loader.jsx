@@ -320,7 +320,7 @@ const GSAPLoader = ({ setLoading }) => {
           }}
         >
           <img 
-            src="/intro/mtch1.jpg" 
+            src="/intro/mtch-1.jpg" 
             alt="Cake 4"
             className="w-full h-full object-cover rounded-lg shadow-lg"
           />
