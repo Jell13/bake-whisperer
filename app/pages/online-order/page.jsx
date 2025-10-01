@@ -8,10 +8,12 @@ import { HiOutlineChevronLeft } from 'react-icons/hi2';
 const page = () => {
 
   const cakes = [
-    {name: "Strawberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices", price: 37, image:"/strawshort.jpg", type: "cake", id: "straw-01"},
-    {name: "Blueberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with blueberry confit, fresh cream, and blueberries", price: 37, image:"/blueberry.jpg", type: "cake", id: "blue-01"},
-    {name: "Basque Burnt Cheesecake", desc: "Extra creamy burnt cheesecake", price: 37, image:"/cheese.jpg", type: "cake", id: "cheese"},
-    {name: "Tiramisu Cake", desc: "A light, soft, and airy coffee chiffon cake filled with mascarpone cream and dusted with cocoa powder", price: 37, image:"/tiramisu.jpg", type: "cake", id: "tira-01"}
+    {name: "Strawberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices", price: 50, image:"/strawshort.jpg", type: "cake", id: "straw-01"},
+    // {name: "Blueberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with blueberry confit, fresh cream, and blueberries", price: 37, image:"/blueberry.jpg", type: "cake", id: "blue-01"},
+    {name: "Basque Burnt Cheesecake", desc: "Extra creamy burnt cheesecake", price: 50, image:"/cheese.jpg", type: "cake", id: "cheese"},
+    {name: "Matcha Cake", desc: "", price: 50, image: "/matcha.jpg", type: "cake", id: "matcha-1"},
+    {name: "Banoffee Cake", desc: "", price: 50, image: "/banoffee.jpg", type: "cake", id: "banoffee-1"},
+    {name: "Tiramisu Cake", desc: "A light, soft, and airy coffee chiffon cake filled with mascarpone cream and dusted with cocoa powder", price: 50, image:"/tiramisu.jpg", type: "cake", id: "tira-01"}
   ]
 
   const puffs = [
@@ -53,6 +55,9 @@ const page = () => {
               </div>
               <div className='col-span-1'>
                 <CartDisplayBox item={cakes[3]}/>
+              </div>
+              <div className='col-span-1'>
+                <CartDisplayBox item={cakes[4]}/>
               </div>
             </div>
             <h3 className='font-Corn text-walnut md:text-[2.5rem] text-[2rem] font-semibold mt-10 tracking tighter'>Cream Puffs</h3>

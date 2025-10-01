@@ -10,7 +10,7 @@ const Shop = () => {
     name: "Tiramisu",
     ingredients: ["Dairy", "Egg", "Flour"],
     images: "/tiramisu.jpg",
-    price: ["$37"],
+    price: ["$50"],
     path: "/pages/tiramisu"
   }
 
@@ -18,15 +18,15 @@ const Shop = () => {
     name: "Strawberry Shortcake",
     ingredients: ["Dairy", "Egg", "Flour"],
     images: "/strawshort.jpg",
-    price: ["$37"],
+    price: ["$50"],
     path: "/pages/strawberry"
   }
 
   const blueberry = {
-    name : "Blueberry Shortcake",
+    name : "Matcha Cake",
     ingredients: ["Dairy", "Egg", "Flour"],
-    images: "/blueberry.jpg",
-    price: ["$37"],
+    images: "/matcha.jpg",
+    price: ["$50"],
     path: "/pages/blueberry"
   }
 
@@ -50,8 +50,16 @@ const Shop = () => {
     name: "Basque Burnt Cheesecake",
     ingredients: ["Dairy", "Egg", " Flour"],
     images: "/cheese.jpg",
-    price: ["$30"],
+    price: ["$50"],
     path: "/pages/cheese"
+  }
+
+  const banoffee = {
+    name: "Banofee Cake",
+    ingredients: ["Dairy", "Egg", "Flour"],
+    images: "/banoffee.jpg",
+    price: ["$50"],
+    path: "/pages/banoffee"
   }
 
   const shopRef = useRef()
@@ -75,6 +83,7 @@ const Shop = () => {
         className='col-start-1 col-span-1 flex flex-col gap-6 translate-y-12'>
           <DisplayBox details={tiramisu}/>
           <DisplayBox details={cream}/>
+          <DisplayBox details={banoffee}/>
         </motion.div>
         <motion.div 
         style={{ y: col2Y }}
@@ -101,6 +110,7 @@ const Shop = () => {
         className='col-span-1 flex flex-col gap-6 mt-6'>
           <DisplayBox details={tiramisu}/>
           <DisplayBox details={cream}/>
+          <DisplayBox details={banoffee}/>
         </motion.div>
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
