@@ -8,8 +8,8 @@ import React from 'react'
 const page = () => {
 
   const slides = [
-    "/blueberry.jpg",
-    "/brown.jpg",
+    "/cheese-1.jpg",
+    "/cheese-2.jpg",
     "/cheese.jpg"
   ];
 

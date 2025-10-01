@@ -8,9 +8,10 @@ import { ReactLenis } from 'lenis/react'
 const page = () => {
 
   const slides = [
-    "/blueberry.jpg",
-    "/brown.jpg",
-    "/cheese.jpg"
+    "/matcha-1.jpg",
+    "/matcha.jpg",
+    "/matcha-2.jpg",
+    "/matcha-3.jpg",
   ];
   
   return (
@@ -30,7 +31,7 @@ const page = () => {
             </div>
             <br />
             <br />
-            <p className='font-Open text-3xl font-semibold'>$37</p>
+            <p className='font-Open text-3xl font-semibold'>$50</p>
             <div className='flex md:justify-end justify-center mt-10 relative'>
               <div className=''>
                 <Image src={"/Bake_Whisperer.png"} width={200} height={200} alt='circle_text' className='animate-spin-slow'/>

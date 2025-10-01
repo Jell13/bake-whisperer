@@ -22,12 +22,12 @@ const Shop = () => {
     path: "/pages/strawberry"
   }
 
-  const blueberry = {
+  const matcha = {
     name : "Matcha Cake",
     ingredients: ["Dairy", "Egg", "Flour"],
     images: "/matcha.jpg",
     price: ["$50"],
-    path: "/pages/blueberry"
+    path: "/pages/matcha"
   }
 
   const cream = {
@@ -95,7 +95,7 @@ const Shop = () => {
         <motion.div 
         style={{ y: col3Y }}
         className='col-start-3 col-span-1 flex flex-col gap-6 translate-y-12'>
-          <DisplayBox details={blueberry}/>
+          <DisplayBox details={matcha}/>
           <DisplayBox details={cheese}/>
         </motion.div>
       </div>
@@ -114,7 +114,7 @@ const Shop = () => {
         </motion.div>
         <motion.div 
         className='col-span-1 flex flex-col gap-6 mt-6'>
-          <DisplayBox details={blueberry}/>
+          <DisplayBox details={matcha}/>
           <DisplayBox details={cheese}/>
         </motion.div>
       </div>
