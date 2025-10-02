@@ -9,10 +9,9 @@ const page = () => {
 
   const cakes = [
     {name: "Strawberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with strawberry confit, fresh cream, and strawberry slices", price: 50, image:"/strawshort.jpg", type: "cake", id: "straw-01"},
-    // {name: "Blueberry Shortcake", desc: "A light, soft, and airy chiffon cake filled with blueberry confit, fresh cream, and blueberries", price: 37, image:"/blueberry.jpg", type: "cake", id: "blue-01"},
     {name: "Basque Burnt Cheesecake", desc: "Extra creamy burnt cheesecake", price: 50, image:"/cheese.jpg", type: "cake", id: "cheese"},
-    {name: "Matcha Cake", desc: "", price: 50, image: "/matcha.jpg", type: "cake", id: "matcha-1"},
-    {name: "Banoffee Cake", desc: "", price: 50, image: "/banoffee.jpg", type: "cake", id: "banoffee-1"},
+    {name: "Matcha Cake", desc: "A light, soft, airy matcha chiffon cake filled with whipped matcha ganache", price: 50, image: "/matcha.jpg", type: "cake", id: "matcha-1"},
+    {name: "Banoffee Cake", desc: "A light, soft, and airy chocolate chiffon cake filled with salted caramel, fresh cream, and banana", price: 50, image: "/banoffee.jpg", type: "cake", id: "banoffee-1"},
     {name: "Tiramisu Cake", desc: "A light, soft, and airy coffee chiffon cake filled with mascarpone cream and dusted with cocoa powder", price: 50, image:"/tiramisu.jpg", type: "cake", id: "tira-01"}
   ]
 
@@ -23,7 +22,7 @@ const page = () => {
   ]
 
   const brownies = [
-    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 22, image: "/brown.jpg", type: "brown", id: "brownies"}
+    {name: "Fudgy Brownies", desc: "A fudgy & decadent brownies with a rich chocolate flavor", price: 32, image: "/brown.jpg", type: "brown", id: "brownies"}
   ]
   return (
     <ReactLenis root>

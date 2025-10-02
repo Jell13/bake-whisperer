@@ -42,7 +42,7 @@ const Shop = () => {
     name: "Fudgy Brownies",
     ingredients: ["Dairy", "Egg", "Flour", "Tree Nuts"],
     images: "/brown.jpg",
-    price: ["$22 /", " $24"],
+    price: ["$30 /", " $32"],
     path: "/pages/brownies"
   }
 
