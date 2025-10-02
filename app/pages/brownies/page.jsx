@@ -63,7 +63,7 @@ const page = () => {
                         </div>
                         <br />
                         <br />
-                        <p className="font-Open text-3xl font-semibold">$37</p>
+                        <p className="font-Open text-3xl font-semibold">$30 / 32</p>
                         <div className="flex md:justify-end justify-center mt-10 relative">
                             <div className="">
                                 <Image
