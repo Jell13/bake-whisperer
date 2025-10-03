@@ -34,7 +34,7 @@ const Shop = () => {
     name: "Cream Puffs",
     ingredients: ["Dairy", "Egg", "Flour"],
     images: "/cream_puffs.jpg",
-    price: ["12 Pieces", " $33"],
+    price: ["12 Pieces", " $36"],
     path: "/pages/cream-puffs"
   }
 

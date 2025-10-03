@@ -16,9 +16,9 @@ const page = () => {
   ]
 
   const puffs = [
-    {name: "Cream Puff Original", desc: "12 piece original cream puffs", price: 33, image: "/puff_og.jpg", type: "puff", id: "puff_og"},
-    {name: "Cream Puff Matcha", desc: "12 piece matcha cream puffs", price: 33, image: "/puff_matcha.jpg", type: "puff", id: "puff_matcha"},
-    {name: "Cream Puff Chocolate Milk", desc: "12 piece chocolate milk cream puffs", price: 33, image: "/puff_coco.jpg", type: "puff", id: "puff_choco"}
+    {name: "Cream Puff Original", desc: "12 piece original cream puffs", price: 36, image: "/puff_og.jpg", type: "puff", id: "puff_og"},
+    {name: "Cream Puff Matcha", desc: "12 piece matcha cream puffs", price: 36, image: "/puff_matcha.jpg", type: "puff", id: "puff_matcha"},
+    {name: "Cream Puff Chocolate Milk", desc: "12 piece chocolate milk cream puffs", price: 36, image: "/puff_coco.jpg", type: "puff", id: "puff_choco"}
   ]
 
   const brownies = [
