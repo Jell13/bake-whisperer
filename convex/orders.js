@@ -27,11 +27,9 @@ export const createOrder = mutation({
     }
 })
 
-export const getOrder = query({
-    args:{
-        userId: v.string()
-    },
+export const getAllOrders = query({
     handler: async (ctx, args) => {
         const allOrders = await ctx.db.query("orders").collect();
+        return allOrders
     }
 })

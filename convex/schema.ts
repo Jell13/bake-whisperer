@@ -14,10 +14,10 @@ export default defineSchema({
                     v.object({
                         text: v.string(),
                     })
-                )
+                ),
             })
         ),
-        status: v.union(v.literal("active"), v.literal("completed"))
+        status: v.union(v.literal("active"), v.literal("completed")),
     }),
     orders: defineTable({
         userId: v.string(),
@@ -34,9 +34,20 @@ export default defineSchema({
                     v.object({
                         text: v.string(),
                     })
-                )
+                ),
             })
         ),
-        totalPrice: v.number()
-    })
-})
+        totalPrice: v.number(),
+    }),
+
+    menu: defineTable({
+        desc: v.string(),
+        frontImage: v.string(),
+        id: v.string(),
+        images: v.array(v.string()),
+        ingredients: v.array(v.string()),
+        name: v.string(),
+        price: v.float64(),
+        type: v.string(),
+    }),
+});

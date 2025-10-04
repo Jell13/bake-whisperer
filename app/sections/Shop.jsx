@@ -73,7 +73,7 @@ const Shop = () => {
 
   const col1Y = useTransform(scrollYProgress, [0, 1], [0, -100]); // Moves up
   const col2Y = useTransform(scrollYProgress, [0, 1], [0, 200]);  // Moves down
-  const col3Y = useTransform(scrollYProgress, [0, 1], [0, -300]); // Moves up slowly
+  const col3Y = useTransform(scrollYProgress, [0, 1], [0, -50]); // Moves up slowly
 
   const distributeItems = (items) => {
     if (!items || items.length === 0) return [[], [], []];
