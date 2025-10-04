@@ -1,9 +1,11 @@
 "use client";
 
+import { api } from "@/convex/_generated/api";
+import { useQuery } from "convex/react";
+import React, { use } from "react";
 import { NavBarScrollRouted } from "@/app/_components/Navbar";
 import Info from "@/app/sections/Info";
 import Image from "next/image";
-import React from "react";
 import { ReactLenis } from "lenis/react";
 import {
     Carousel,
@@ -13,14 +15,30 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useRouter } from "next/navigation";
 
-const page = () => {
-    const slides = [
-        "/matcha1.jpg",
-        // "/matcha.jpg",
-        "/matcha2.jpg",
-        "/matcha3.jpg",
-    ];
+const page = ({ params }) => {
+    const { id } = use(params);
+
+    const menuInfo = useQuery(api.menu.getMenuInfo, {
+        id: id,
+    });
+
+    console.log(menuInfo);
+
+    if (!menuInfo) {
+        return (
+            <div className="w-full h-screen flex justify-center items-center">
+                <Image
+                    src={"/Bake_Whisperer.png"}
+                    width={200}
+                    height={200}
+                    alt="circle_text"
+                    className="animate-spin-slow"
+                />
+            </div>
+        );
+    }
 
     return (
         <ReactLenis root>
@@ -37,18 +55,20 @@ const page = () => {
                             className="md:w-[500px] w-[300px]"
                         >
                             <CarouselContent>
-                                {slides.map((slide, index) => (
-                                    <CarouselItem key={index}>
-                                        <div className="flex items-center justify-center">
-                                            <div
-                                                className="md:w-[500px] w-[300px] md:h-[780px] h-[500px] rounded-2xl bg-center bg-cover"
-                                                style={{
-                                                    backgroundImage: `url(${slide})`,
-                                                }}
-                                            />
-                                        </div>
-                                    </CarouselItem>
-                                ))}
+                                {menuInfo &&
+                                    menuInfo.images.length > 0 &&
+                                    menuInfo.images.map((slide, index) => (
+                                        <CarouselItem key={index}>
+                                            <div className="flex items-center justify-center">
+                                                <div
+                                                    className="md:w-[500px] w-[300px] md:h-[780px] h-[500px] rounded-2xl bg-center bg-cover"
+                                                    style={{
+                                                        backgroundImage: `url(${slide})`,
+                                                    }}
+                                                />
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
                             </CarouselContent>
                             <CarouselPrevious className="left-5 bg-black/20 text-white border-none hover:bg-black/40" />
                             <CarouselNext className="right-5 bg-black/20 text-white border-none hover:bg-black/40" />
@@ -56,16 +76,20 @@ const page = () => {
                     </div>
                     <div className="flex flex-col md:py-48 text-walnut">
                         <h4 className="font-Corn text-6xl font-semibold tracking-tighter">
-                            Matcha Cake
+                            {menuInfo && menuInfo.name}
                         </h4>
                         <br />
                         <div>
-                            <p className="font-Open tracking-tighter max-w-[40rem] md:max-w-full text-xl">A light, soft, airy matcha chiffon cake filled with whipped matcha ganache</p>
+                            <p className="font-Open tracking-tighter max-w-[40rem] md:max-w-full text-xl">
+                                {menuInfo && menuInfo.desc}
+                            </p>
                             {/* <p>Size: 6 inch diameter</p> */}
                         </div>
                         <br />
                         <br />
-                        <p className="font-Open text-3xl font-semibold">$50</p>
+                        <p className="font-Open text-3xl font-semibold">
+                            ${menuInfo && menuInfo.price}
+                        </p>
                         <div className="flex md:justify-end justify-center mt-10 relative">
                             <div className="">
                                 <Image

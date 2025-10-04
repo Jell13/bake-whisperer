@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from  'motion/react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 
 const DisplayBox = ({details}) => {
@@ -39,7 +39,7 @@ const DisplayBox = ({details}) => {
       </div>
       <div className='px-2 mt-6 pb-4'>
         {/* <motion.img loading='lazy' animate={hover ? {scale: 1} : {scale: 0.8}} transition={{duration: 0.3, ease: "easeIn"}} className='rounded-2xl' src={details.images} alt=""/> */}
-        <Image src={details.images} className='rounded-2xl group-hover:scale-95 duration-300 xl:w-[700px]' width={400} height={10} alt={details.images}/>
+        <img src={details.images} className='rounded-2xl group-hover:scale-95 duration-300 xl:w-[700px]' width={400} height={10} alt={details.images}/>
       </div>
     </Link>
   )

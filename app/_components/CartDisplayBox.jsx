@@ -52,7 +52,7 @@ const CartDisplayBox = ({ item }) => {
   const handleSubmit = async () => {
     const name = item.name
     const topperText = active ? "topper added" : ""
-    const productId = active ? `${item.id}-top-${topperText}` : item.id
+    const productId = active ? `${item._id}-top-${topperText}` : item.id
     const create = await addCart({
       userId: userId,
       name: name,
@@ -73,7 +73,7 @@ const CartDisplayBox = ({ item }) => {
       <Dialog>
         <DialogTrigger className='flex flex-col'>
           <div className='group-hover:scale-95 duration-300'>
-            <Image src={item.image} alt="strawshort" width={300} height={100} className='rounded-2xl' />
+            <img src={item.frontImage} alt="strawshort" width={300} height={100} className='rounded-2xl' />
             <div className='flex flex-col items-start text-left'>
               <h4 className='font-Corn text-2xl mt-5 text-wrap text-walnut font-semibold'>{item.name}</h4>
               <p className='text-wrap'>{item.desc}</p>
@@ -86,7 +86,7 @@ const CartDisplayBox = ({ item }) => {
         </DialogTrigger>
         <DialogContent className="bg-soft text-softer">
           <DialogHeader className="flex flex-col gap-4 justify-center items-center relative">
-            <Image src={item.image} alt='strawshort' width={200} height={200} className='rounded-2xl' />
+            <img src={item.frontImage} alt='strawshort' width={200} height={200} className='rounded-2xl' />
             <div className='w-full flex flex-col justify-start'>
               <DialogTitle className="text-walnut text-center">{item.name}</DialogTitle>
 
