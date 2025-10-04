@@ -91,7 +91,7 @@ const CartDisplayBox = ({ item }) => {
               <DialogTitle className="text-walnut text-center">{item.name}</DialogTitle>
 
               {/* Addon Selection Form */}
-              {item.type === "cake" && (
+              {item.type === "Cake" && (
                 <>
                   <div className="mt-2">
                     <h3 className="text-walnut text-lg font-semibold">Select Addons</h3>

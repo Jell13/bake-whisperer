@@ -289,9 +289,11 @@ import { api } from "@/convex/_generated/api";
 import CartItem from "./CartItem";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLenis } from 'lenis/react'
 export const NavBarScrollCart = () => {
 
   const[userId, setUserId] = useState(null)
+  const lenis = useLenis();
   useEffect(() => {
     if (typeof window !== "undefined") {
       const userUid = localStorage.getItem("userUid");
@@ -302,6 +304,16 @@ export const NavBarScrollCart = () => {
   const[cart, setCart] = useState([])
   const[totalPrice, setTotal] = useState(0)
   const activeCart = useQuery(api.carts.getCart, {userId})
+
+  useEffect(() => {
+    if (active) {
+      lenis?.stop(); // Stop Lenis smooth scroll
+      document.body.style.overflow = 'hidden'; // Prevent body scroll
+    } else {
+      lenis?.start(); // Resume Lenis
+      document.body.style.overflow = ''; // Restore body scroll
+    }
+  }, [active, lenis]);
 
   useEffect(() => {
     if (activeCart && activeCart.items) {
@@ -326,6 +338,7 @@ export const NavBarScrollCart = () => {
       </motion.button>
       {active &&
       <motion.div
+      onWheel={(e) => e.stopPropagation()}
       className='w-full h-screen fixed top-0 left-0 z-30 justify-end duration-300'>
         <div className='w-full h-screen flex justify-end font-Corn'>
           <motion.div 

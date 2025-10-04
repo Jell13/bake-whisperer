@@ -27,12 +27,11 @@ export const createOrder = mutation({
     }
 })
 
-// export const getOrder = query({
-//     args:{
-//         userId: v.string()
-//     },
-//     handler: async (ctx, args) => {
-//         const allOrders = await ctx.db.query("orders").filter(q => q.eq(q.field("userId"), args.userId)).order(q => q.desc(q.field("_creationTime"))).collect()
-//         return allOrders[0]
-//     }
-// })
+export const getOrder = query({
+    args:{
+        userId: v.string()
+    },
+    handler: async (ctx, args) => {
+        const allOrders = await ctx.db.query("orders").collect();
+    }
+})
