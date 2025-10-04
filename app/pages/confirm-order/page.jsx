@@ -66,7 +66,8 @@ const page = () => {
             email: email,
             date: date,
             totalPrice: totalPrice,
-            cartId: cartId
+            cartId: cartId,
+            completed: false
         })
         toast.promise(orderCreation, {
             success: "Order has been placed successfully",

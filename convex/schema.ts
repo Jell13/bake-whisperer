@@ -38,6 +38,8 @@ export default defineSchema({
             })
         ),
         totalPrice: v.number(),
+        completed: v.boolean(),
+        notes: v.optional(v.string())
     }),
 
     menu: defineTable({

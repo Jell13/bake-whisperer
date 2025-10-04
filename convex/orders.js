@@ -8,7 +8,8 @@ export const createOrder = mutation({
         email: v.string(),
         date: v.string(),
         totalPrice: v.number(),
-        cartId: v.id("shoppingCarts")
+        cartId: v.id("shoppingCarts"),
+        completed: v.boolean()
     },
     handler: async (ctx, args) => {
         const completedCart = await ctx.db.query("shoppingCarts").filter(q => q.eq(q.field("userId"), args.userId))
@@ -21,7 +22,8 @@ export const createOrder = mutation({
                 email: args.email,
                 date: args.date,
                 items: completedCart.items,
-                totalPrice: args.totalPrice
+                totalPrice: args.totalPrice,
+                completed: args.completed
             })
         }
     }
@@ -31,5 +33,26 @@ export const getAllOrders = query({
     handler: async (ctx, args) => {
         const allOrders = await ctx.db.query("orders").collect();
         return allOrders
+    }
+})
+
+export const addNoteOrder = mutation({
+    args: {
+        id: v.string(),
+        note: v.string()
+    },
+    handler: async (ctx, args) => {
+        
+        const { id, note } = args;
+        await ctx.db.patch(id, { notes: note})
+    }
+})
+
+export const deleteOrder = mutation({
+    args: {
+        id: v.string()
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id)
     }
 })

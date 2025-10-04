@@ -8,6 +8,7 @@ import { NavBarScrollCart } from "@/app/_components/Navbar";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
 import { api } from "@/convex/_generated/api";
 import { useQuery } from "convex/react";
+import Image from "next/image";
 
 const formatTypeName = (type) => {
     return type.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
@@ -20,8 +21,14 @@ const page = () => {
 
     if (!menu) {
         return (
-            <div className="md:pt-32 md:px-8 px-4 text-secondary flex items-center justify-center min-h-screen">
-                <p className="text-xl text-gray-500">Loading menu...</p>
+            <div className="w-full h-screen flex justify-center items-center">
+                <Image
+                    src={"/Bake_Whisperer.png"}
+                    width={200}
+                    height={200}
+                    alt="circle_text"
+                    className="animate-spin-slow"
+                />
             </div>
         );
     }
