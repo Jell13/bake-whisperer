@@ -47,7 +47,7 @@ const Shop = () => {
         ingredients: item.ingredients || [],
         images: item.frontImage || "",
         price: [`$${item.price}`],
-        path: `/pages/${item._id}`,
+        path: `/${item._id}`,
     });
 
     if (!menu) {
