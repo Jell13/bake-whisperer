@@ -39,6 +39,7 @@ export default defineSchema({
         ),
         totalPrice: v.number(),
         completed: v.boolean(),
+        status: v.union(v.literal("Paid"), v.literal("Unpaid")),
         notes: v.optional(v.string())
     }),
 

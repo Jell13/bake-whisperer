@@ -23,7 +23,8 @@ export const createOrder = mutation({
                 date: args.date,
                 items: completedCart.items,
                 totalPrice: args.totalPrice,
-                completed: args.completed
+                completed: args.completed,
+                status: "Unpaid"
             })
         }
     }
@@ -33,6 +34,20 @@ export const getAllOrders = query({
     handler: async (ctx, args) => {
         const allOrders = await ctx.db.query("orders").collect();
         return allOrders
+    }
+})
+
+export const changeOrderStatus = mutation({
+    args: {
+        id: v.string(),
+        status: v.string()
+    },
+    handler: async (ctx, args) => {
+        
+        const { id, status } = args;
+
+        const newStatus = status === "Unpaid" ? "Paid" : "Unpaid";
+        await ctx.db.patch(id, { status: newStatus})
     }
 })
 
