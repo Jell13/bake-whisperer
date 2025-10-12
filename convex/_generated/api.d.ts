@@ -14,8 +14,10 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as carts from "../carts.js";
+import type * as custom from "../custom.js";
 import type * as menu from "../menu.js";
 import type * as orders from "../orders.js";
+import type * as send from "../send.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -27,8 +29,10 @@ import type * as orders from "../orders.js";
  */
 declare const fullApi: ApiFromModules<{
   carts: typeof carts;
+  custom: typeof custom;
   menu: typeof menu;
   orders: typeof orders;
+  send: typeof send;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

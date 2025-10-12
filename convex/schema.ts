@@ -52,4 +52,15 @@ export default defineSchema({
         price: v.float64(),
         type: v.string(),
     }),
+
+    custom: defineTable({
+        name: v.string(),
+        email: v.string(),
+        phone: v.string(),
+        eventType: v.string(),
+        date: v.number(),
+        guestCount: v.number(),
+        deliverType: v.string(),
+        payment: v.string()
+    })
 });

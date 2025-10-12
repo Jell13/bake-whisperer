@@ -166,7 +166,7 @@ export const NavBarScroll = () => {
         },
         {
             id: 4,
-            name: "Event",
+            name: "Events",
             path: "/events",
         },
     ];
@@ -292,7 +292,7 @@ export const NavBarScrollRouted = () => {
                     transition: { duration: 0.3 },
                 }}
                 onClick={() => setActive(!active)}
-                className="text-black text-xl z-40 fixed flex flex-col justify-center items-center right-7 bg-softer top-7 rounded-full size-16  hover:scale-90"
+                className="text-black text-xl z-40 fixed flex flex-col justify-center items-center md:right-7 right-4 bg-softer top-7 rounded-full size-16  hover:scale-90"
             >
                 <span
                     className={`w-7 h-[2px] bg-soft absolute rounded-full ${active ? "translate-y-0 rotate-45 bg-soft" : "-translate-y-1 rotate-0"} duration-300`}
