@@ -62,6 +62,8 @@ export default defineSchema({
         date: v.number(),
         guestCount: v.number(),
         deliverType: v.string(),
-        payment: v.string()
+        payment: v.string(),
+        completed: v.boolean(),
+        notes: v.optional(v.string())
     })
 });
