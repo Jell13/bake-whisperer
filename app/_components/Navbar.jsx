@@ -41,16 +41,16 @@ const Navbar = ({ startAnimation }) => {
 const NavBarFixed = ({ startAnimation }) => {
     const headerRef = useRef();
     const links = [
-        {
-            id: 2,
-            name: "Products",
-            path: "#shop",
-        },
-        {
-            id: 3,
-            name: "About",
-            path: "#about",
-        },
+        // {
+        //     id: 2,
+        //     name: "Products",
+        //     path: "#shop",
+        // },
+        // {
+        //     id: 3,
+        //     name: "About",
+        //     path: "#about",
+        // },
         {
             id: 4,
             name: "Info & Order",
