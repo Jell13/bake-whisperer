@@ -50,6 +50,7 @@ export default function Home() {
         <GSAPLoader setLoading={setLoading} />
       ) : ( */}
         <ReactLenis root>
+          {/* {loading && <GSAPLoader setLoading={setLoading}/>} */}
           {loading && <GSAPLoader setLoading={setLoading}/>}
           <div style={{
             visibility: loading ? 'hidden' : 'visible',
