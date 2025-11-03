@@ -148,7 +148,7 @@ const page = () => {
         <div className='py-6 flex flex-col relative'>
             <nav className='flex items-center justify-between md:px-8 px-6 bg-soft'>
                 <div className='flex gap-5 items-center'>
-                    <Link href={"/pages/online-order"}>
+                    <Link href={"/online-order"}>
                         <div className='flex items-center p-2 py-1 border-[1px] text-[1rem] border-walnut text-walnut font-Open rounded-xl hover:bg-walnut hover:text-beige duration-300'>
                             <HiOutlineChevronLeft/>
                             <p>Back</p>
