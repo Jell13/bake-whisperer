@@ -21,7 +21,7 @@ const Info = () => {
           </h4>
         </div>
         <div className=' w-full flex flex-col mb-4'>
-          <Link href={"/pages/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 md:p-4 p-2 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
+          <Link href={"/online-order"} className='border-2 border-walnut hover:bg-walnut hover:text-beige duration-300 md:p-4 p-2 text-walnut rounded-lg w-full md:text-[2rem] text-[2rem] flex justify-center'>Order Online</Link>
           <div className='flex md:flex-row flex-col justify-around mt-10 items-center'>
             <div>
               <img src="/logo-bw.png" alt="" className='md:w-[300px] w-[200px]'/>

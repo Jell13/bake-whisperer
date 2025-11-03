@@ -481,7 +481,7 @@ export const NavBarScrollCart = () => {
                             {activeCart && activeCart.items.length > 0 && (
                                 <div className="px-10 pb-5 mt-8">
                                     <Link
-                                        href={"/pages/confirm-order"}
+                                        href={"/confirm-order"}
                                         className="flex items-center font-Open gap-4 text-walnut text-[1.5rem] rounded-xl border-[1px] px-2 py-1 border-walnut hover:text-beige hover:bg-walnut"
                                     >
                                         <p className="flex items-center">

@@ -124,12 +124,17 @@ const page = () => {
                 name: `${submissionData.name}`,
                 email: `${submissionData.email}`,
                 phone: `${submissionData.phone}`,
+                eventType: `${submissionData.eventType}`,
+                date: `${submissionData.eventDate}`,
+                guestCount: `${submissionData.guestCount}`,
+                deliverType: `${submissionData.deliverType}`,
+                payment: `${submissionData.payment}`
             };
 
             emailjs
                 .send(
                     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CUSTOM,
                     templateParams
                 )
                 .then(
