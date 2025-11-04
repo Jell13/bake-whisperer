@@ -450,23 +450,23 @@ const BakeryLoader = ({ setLoading }) => {
         <div ref={bowlRef} className="relative">
           <svg width="200" height="120" viewBox="0 0 200 120" className="mb-4">
             {/* Bowl shadow */}
-            <ellipse cx="100" cy="115" rx="80" ry="8" fill="#A48B6D" opacity="0.3"/>
+            <ellipse cx="100" cy="115" rx="80" ry="8" fill="#773F1A" opacity="0.1"/>
             
             {/* Bowl body */}
             <path
               d="M 30 40 Q 30 100 100 110 Q 170 100 170 40 L 165 45 Q 165 95 100 105 Q 35 95 35 45 Z"
-              fill="#773F1A"
-              stroke="#5a2f15"
-              strokeWidth="2"
+              fill="none"
+              stroke="#773F1A"
+              strokeWidth="0.8"
             />
             
             {/* Bowl rim */}
-            <ellipse cx="100" cy="40" rx="70" ry="12" fill="#8B5A2B" stroke="#5a2f15" strokeWidth="2"/>
-            <ellipse cx="100" cy="40" rx="65" ry="10" fill="#A06B3A"/>
+            <ellipse cx="100" cy="40" rx="70" ry="10" fill="none" stroke="#773F1A" strokeWidth="0.8"/>
+            <ellipse cx="100" cy="40" rx="65" ry="8" fill="none" stroke="#773F1A" strokeWidth="0.8"/>
             
             {/* Mixing content */}
-            <ellipse cx="100" cy="42" rx="55" ry="8" fill="#F5E6D3" opacity="0.9"/>
-            <ellipse cx="100" cy="42" rx="50" ry="7" fill="#FEFAF5"/>
+            <ellipse cx="100" cy="42" rx="55" ry="6" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.5"/>
+            <ellipse cx="100" cy="42" rx="50" ry="5" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.5"/>
           </svg>
         </div>
 
@@ -474,22 +474,21 @@ const BakeryLoader = ({ setLoading }) => {
         <div ref={whiskRef} className="absolute" style={{ top: '20px' }}>
           <svg width="80" height="100" viewBox="0 0 80 100">
             {/* Handle */}
-            <rect x="36" y="0" width="8" height="60" fill="#773F1A" rx="4"/>
-            <rect x="37" y="0" width="6" height="60" fill="#8B5A2B" rx="3"/>
+            <rect x="38" y="0" width="4" height="60" fill="none" stroke="#773F1A" strokeWidth="0.8" rx="2"/>
             
             {/* Whisk wires */}
-            <path d="M 40 55 Q 30 70 32 85" stroke="#C0C0C0" strokeWidth="2" fill="none"/>
-            <path d="M 40 55 Q 35 70 37 85" stroke="#C0C0C0" strokeWidth="2" fill="none"/>
-            <path d="M 40 55 L 40 85" stroke="#C0C0C0" strokeWidth="2" fill="none"/>
-            <path d="M 40 55 Q 45 70 43 85" stroke="#C0C0C0" strokeWidth="2" fill="none"/>
-            <path d="M 40 55 Q 50 70 48 85" stroke="#C0C0C0" strokeWidth="2" fill="none"/>
+            <path d="M 40 55 Q 30 70 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 55 Q 35 70 37 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 55 L 40 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 55 Q 45 70 43 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 55 Q 50 70 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             
             {/* Wire loops */}
-            <circle cx="32" cy="85" r="3" fill="none" stroke="#C0C0C0" strokeWidth="2"/>
-            <circle cx="37" cy="85" r="3" fill="none" stroke="#C0C0C0" strokeWidth="2"/>
-            <circle cx="40" cy="85" r="3" fill="none" stroke="#C0C0C0" strokeWidth="2"/>
-            <circle cx="43" cy="85" r="3" fill="none" stroke="#C0C0C0" strokeWidth="2"/>
-            <circle cx="48" cy="85" r="3" fill="none" stroke="#C0C0C0" strokeWidth="2"/>
+            <circle cx="32" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
+            <circle cx="37" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
+            <circle cx="40" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
+            <circle cx="43" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
+            <circle cx="48" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
           </svg>
         </div>
 
@@ -512,8 +511,8 @@ const BakeryLoader = ({ setLoading }) => {
             <circle cx="15" cy="15" r="8" fill="none" stroke="#773F1A" strokeWidth="1"/>
             <circle cx="15" cy="15" r="12" fill="none" stroke="#773F1A" strokeWidth="0.5"/>
           </svg>
-        </div> */}
-        {/* <div className="absolute bottom-10 right-10">
+        </div>
+        <div className="absolute bottom-10 right-10">
           <svg width="30" height="30" viewBox="0 0 30 30" className="opacity-20">
             <circle cx="15" cy="15" r="3" fill="#773F1A"/>
             <circle cx="15" cy="15" r="8" fill="none" stroke="#773F1A" strokeWidth="1"/>
