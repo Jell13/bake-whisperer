@@ -474,21 +474,29 @@ const BakeryLoader = ({ setLoading }) => {
         <div ref={whiskRef} className="absolute" style={{ top: '20px' }}>
           <svg width="80" height="100" viewBox="0 0 80 100">
             {/* Handle */}
-            <rect x="38" y="0" width="4" height="60" fill="none" stroke="#773F1A" strokeWidth="0.8" rx="2"/>
+            <rect x="38" y="0" width="4" height="50" fill="none" stroke="#773F1A" strokeWidth="0.8" rx="2"/>
             
-            {/* Whisk wires */}
-            <path d="M 40 55 Q 30 70 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            <path d="M 40 55 Q 35 70 37 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            <path d="M 40 55 L 40 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            <path d="M 40 55 Q 45 70 43 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            <path d="M 40 55 Q 50 70 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Balloon whisk wires - creating balloon shape */}
+            {/* Left outer wire */}
+            <path d="M 40 50 Q 25 65 28 85 Q 30 90 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Left inner wire */}
+            <path d="M 40 50 Q 30 65 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Center left wire */}
+            <path d="M 40 50 Q 35 68 36 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Center wire */}
+            <path d="M 40 50 L 40 88" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Center right wire */}
+            <path d="M 40 50 Q 45 68 44 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Right inner wire */}
+            <path d="M 40 50 Q 50 65 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Right outer wire */}
+            <path d="M 40 50 Q 55 65 52 85 Q 50 90 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             
-            {/* Wire loops */}
-            <circle cx="32" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
-            <circle cx="37" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
-            <circle cx="40" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
-            <circle cx="43" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
-            <circle cx="48" cy="85" r="3" fill="none" stroke="#773F1A" strokeWidth="0.6" opacity="0.7"/>
+            {/* Bottom connection - creates balloon shape base */}
+            <path d="M 32 85 Q 36 90 40 90 Q 44 90 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            
+            {/* Connecting rings at bottom */}
+            <ellipse cx="40" cy="87" rx="8" ry="2" fill="none" stroke="#773F1A" strokeWidth="0.5" opacity="0.5"/>
           </svg>
         </div>
 
