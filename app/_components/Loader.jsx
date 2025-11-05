@@ -471,7 +471,7 @@ const BakeryLoader = ({ setLoading }) => {
         </div>
 
         {/* Whisk */}
-        <div ref={whiskRef} className="absolute" style={{ top: '20px' }}>
+        <div ref={whiskRef} className="absolute" style={{ top: '10px' }}>
           <svg width="80" height="100" viewBox="0 0 80 100">
             {/* Handle */}
             <rect x="38" y="0" width="4" height="50" fill="none" stroke="#773F1A" strokeWidth="0.8" rx="2"/>
