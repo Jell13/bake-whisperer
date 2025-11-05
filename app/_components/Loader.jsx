@@ -476,27 +476,24 @@ const BakeryLoader = ({ setLoading }) => {
             {/* Handle */}
             <rect x="38" y="0" width="4" height="50" fill="none" stroke="#773F1A" strokeWidth="0.8" rx="2"/>
             
-            {/* Balloon whisk wires - creating balloon shape */}
-            {/* Left outer wire */}
-            <path d="M 40 50 Q 25 65 28 85 Q 30 90 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Balloon whisk wires - starts narrow, widens, then smoothly curves to point */}
+            {/* Left outer wire - smooth teardrop curve */}
+            <path d="M 40 50 Q 30 58 26 70 Q 24 78 24 85 Q 26 91 32 95 Q 36 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Left middle wire */}
+            <path d="M 40 50 Q 34 58 32 70 Q 31 78 31 85 Q 32 91 35 95 Q 37 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             {/* Left inner wire */}
-            <path d="M 40 50 Q 30 65 32 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            {/* Center left wire */}
-            <path d="M 40 50 Q 35 68 36 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 50 Q 37 58 36 70 Q 35 78 35 85 Q 36 91 37 95 Q 38 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             {/* Center wire */}
-            <path d="M 40 50 L 40 88" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            {/* Center right wire */}
-            <path d="M 40 50 Q 45 68 44 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 50 L 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             {/* Right inner wire */}
-            <path d="M 40 50 Q 50 65 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            {/* Right outer wire */}
-            <path d="M 40 50 Q 55 65 52 85 Q 50 90 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            <path d="M 40 50 Q 43 58 44 70 Q 45 78 45 85 Q 44 91 43 95 Q 42 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Right middle wire */}
+            <path d="M 40 50 Q 46 58 48 70 Q 49 78 49 85 Q 48 91 45 95 Q 43 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
+            {/* Right outer wire - smooth teardrop curve */}
+            <path d="M 40 50 Q 50 58 54 70 Q 56 78 56 85 Q 54 91 48 95 Q 44 97 40 97" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
             
-            {/* Bottom connection - creates balloon shape base */}
-            <path d="M 32 85 Q 36 90 40 90 Q 44 90 48 85" stroke="#773F1A" strokeWidth="0.6" fill="none" opacity="0.7"/>
-            
-            {/* Connecting rings at bottom */}
-            <ellipse cx="40" cy="87" rx="8" ry="2" fill="none" stroke="#773F1A" strokeWidth="0.5" opacity="0.5"/>
+            {/* Bottom point where all wires meet */}
+            <circle cx="40" cy="97" r="1.5" fill="#773F1A" opacity="0.7"/>
           </svg>
         </div>
 
