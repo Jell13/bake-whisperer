@@ -97,13 +97,13 @@ const Hero = ({startAnimation}) => {
 
         {/* Main title section - more compact */}
         <div className='flex flex-col items-center gap-4 max-w-4xl'>
-          <h1 className={`font-Corn font-semibold text-walnut text-4xl md:text-6xl lg:text-7xl text-center tracking-tight leading-tight transition-all duration-700 delay-200 ${
+          <h1 className={`font-Corn font-semibold text-walnut text-4xl md:text-8xl lg:text-8xl text-center tracking-tight leading-tight transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             Baked with <span className='text-[#c69c6d] relative inline-block'>
               Heart
-              <svg className='absolute -bottom-1 left-0 w-full h-2' viewBox='0 0 200 10' preserveAspectRatio='none'>
-                <path d='M0,7 Q50,3 100,7 T200,7' fill='none' stroke='#c69c6d' strokeWidth='2' opacity='0.3'/>
+              <svg className='absolute -bottom-0.5 left-0 w-full h-2' viewBox='0 0 200 10' preserveAspectRatio='none'>
+                <path d='M0,7 Q50,3 100,7 T200,7' fill='none' stroke='#c69c6d' strokeWidth='3' opacity='0.3'/>
               </svg>
             </span>,<br/>Served with Joy
           </h1>

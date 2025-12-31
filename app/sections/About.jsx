@@ -27,7 +27,7 @@ const About = () => {
   return (
     <motion.div
     id='about'
-    className='md:px-12 px-4 pt-32 mb-32'>
+    className='md:px-12 px-4 pt-20 mb-32'>
       <div className='w-full flex flex-col font-Open'>
         <motion.h3
         ref={aboutRef} 
