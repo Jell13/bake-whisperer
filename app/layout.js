@@ -4,7 +4,37 @@ import "./globals.css";
 
 export const metadata = {
   title: "Bake Whisperer",
-  description: "Bake Whisperer - Bakery at your doorstep",
+  description: "Brea's premier Artisan Bakery & Fresh Pastries",
+  keywords: [
+    "bakery in Brea",
+    "Brea bakery",
+    "bakery near me",
+    "Brea CA bakery",
+    "custom cakes Brea",
+    "fresh bread Brea",
+    "pastries Brea California",
+    "artisan bakery Orange County",
+    "bakery Fullerton",
+    "bakery Yorba Linda",
+    "same day bakery delivery Brea",
+    "wedding cakes Brea",
+    "birthday cakes Brea CA"
+  ],
+  authors: [{ name: "Bake Whisperer" }],
+  creator: "Bake Whisperer",
+  publisher: "Bake Whisperer",
+  metadataBase: new URL("https://bake-whisperer.com"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
 };
 
 export default function RootLayout({ children }) {
